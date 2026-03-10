@@ -9,6 +9,7 @@ format:
 ::: {.hero-section}
 
 # Your Project Title Here {.title}
+F1tenth: invincible_proj
 
 ::: {.subtitle}
 A catchy one-line description of your project
