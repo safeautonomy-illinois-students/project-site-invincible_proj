@@ -1,4 +1,4 @@
---- 
+---
 pagetitle: "Your Project Title"
 format:
   html:
@@ -8,23 +8,23 @@ format:
 
 ::: {.hero-section}
 
-# F1tenth: invincible_proj {.title}
+# Your Project Title Here {.title}
 
 ::: {.subtitle}
-Time Trial ECE484 final project
+A catchy one-line description of your project
 :::
 
 ::: {.author-list}
 
 [**Zhenyu Zhang**](https://example.com)^1^,
-[**Yuanzhe Wang**](https://example.com)^2^,
-[**Murphy Huang**](https://example.com)^1,2^
+[**Author Two**](https://example.com)^2^,
+[**Author Three**](https://example.com)^1,2^
 
 :::
 
 ::: {.affiliation-list}
 
-^1^University of Illinois Urbana-Champaign,  ^2^ECE484
+^1^University Name,  ^2^Research Lab / Company
 
 :::
 
@@ -33,7 +33,7 @@ Time Trial ECE484 final project
 [[{{< fa file-pdf >}} Paper]{.btn-text}](https://arxiv.org/pdf/XXXX.XXXXX){.btn .btn-primary}
 [[{{< fa brands arxiv >}} arXiv]{.btn-text}](https://arxiv.org/abs/XXXX.XXXXX){.btn .btn-primary}
 [[{{< fa video >}} Video]{.btn-text}](https://www.youtube.com/watch?v=cSQTZoZPJzs){.btn .btn-primary}
-[[{{< fa brands github >}} Code]{.btn-text}](https://github.com/safeautonomy-illinois-students/project-site-invincible_proj/){.btn .btn-primary}
+[[{{< fa brands github >}} Code]{.btn-text}](https://github.com/){.btn .btn-primary}
 [[{{< fa database >}} Data]{.btn-text}](https://example.com){.btn .btn-primary}
 
 :::
