@@ -119,37 +119,37 @@ For navigation, we implement the A* Algorithm to compute the optimal path throug
 ## System Pipeline {.section-title}
 
 ::: {.content-text}
-The final implementation can follow several successful F1TENTH strategies, but most strong systems share the same high-level structure shown below.
+
 :::
 
 ::: {.pipeline-grid}
 ::: {.pipeline-step}
 <div class="step-number">01</div>
 <h3>Sensing</h3>
-<p>.</p>
+<p> </p>
 :::
 
 ::: {.pipeline-step}
 <div class="step-number">02</div>
 <h3>Track Understanding</h3>
-<p>.</p>
+<p> </p>
 :::
 
 ::: {.pipeline-step}
 <div class="step-number">03</div>
 <h3>Planning</h3>
-<p>.</p>
+<p> </p>
 :::
 
 ::: {.pipeline-step}
 <div class="step-number">04</div>
 <h3>Control</h3>
-<p>.</p>
+<p> </p>
 :::
 :::
 
 ::: {.content-text}
-.
+
 :::
 
 :::
@@ -178,30 +178,30 @@ Base setup for the simulator
 ::: {.metric-card}
 <div class="metric-label">Best Lap Time</div>
 <div class="metric-value">TBD</div>
-<div class="metric-note">Insert your best official or practice run time here.</div>
+<div class="metric-note"> </div>
 :::
 
 ::: {.metric-card}
 <div class="metric-label">Completion Rate</div>
 <div class="metric-value">TBD</div>
-<div class="metric-note">Track how often the car finishes a run without failure.</div>
+<div class="metric-note"> </div>
 :::
 
 ::: {.metric-card}
 <div class="metric-label">Controller Smoothness</div>
 <div class="metric-value">TBD</div>
-<div class="metric-note">Use steering variance, jerk, or qualitative stability notes.</div>
+<div class="metric-note"> </div>
 :::
 
 ::: {.metric-card}
 <div class="metric-label">Top Reliable Speed</div>
 <div class="metric-value">TBD</div>
-<div class="metric-note">Record the fastest stable speed profile you can repeat.</div>
+<div class="metric-note"> </div>
 :::
 :::
 
 ::: {.content-text}
-Consider presenting results with lap times, completion rate, controller smoothness, and failure cases such as wall approaches, steering oscillation, or late braking near tight turns.
+
 :::
 
 :::

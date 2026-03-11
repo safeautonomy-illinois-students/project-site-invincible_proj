@@ -194,7 +194,8 @@ body {
 .pipeline-step,
 .metric-card,
 .feature-card,
-.resource-card,
+.resource-card p { font-size: 0.92rem; }
+
 .hero-summary-panel {
   background: var(--color-card);
   border: 1px solid var(--color-border);
@@ -323,7 +324,7 @@ body {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.challenge-card p { font-size: 0.85rem; }
+.challenge-card p { font-size: 0.92rem; }
 
 .feature-card,
 .resource-card {
