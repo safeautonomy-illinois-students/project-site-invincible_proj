@@ -290,3 +290,8 @@ Race images, trajectory plots, lap-time tables, ROS graph snapshots, and annotat
   note         = {ECE 484 final project website},
   howpublished = {GitHub Pages project site}
 }
+:::
+
+::: {.site-footer}
+This website is built with Quarto and customized for an F1TENTH autonomous racing project page. The original academic-page layout inspiration comes from the Nerfies project page template.
+:::
