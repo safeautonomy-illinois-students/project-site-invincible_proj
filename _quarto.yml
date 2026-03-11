@@ -3,16 +3,20 @@ project:
   output-dir: docs
 
 website:
-  title: "Project Title"
+  title: "invincible_proj"
   navbar:
     background: light
     left:
-      - text: "More Research"
-        menu:
-          - text: "Project 1"
-            href: https://example.com
-          - text: "Project 2"
-            href: https://example.com
+      - text: "Overview"
+        href: "#overview"
+      - text: "System"
+        href: "#system"
+      - text: "Demo"
+        href: "#demo"
+      - text: "Results"
+        href: "#results"
+      - text: "Future Work"
+        href: "#future"
 
 format:
   html:
@@ -20,3 +24,4 @@ format:
     css: styles.css
     toc: false
     page-layout: full
+    smooth-scroll: true
