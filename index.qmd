@@ -90,7 +90,7 @@ We approach the problem as a full autonomy stack. The vehicle uses onboard sensi
 ## Designed algorism plan  {.section-title}
 
 ::: {.challenge-grid}
-::: {.hero-highlight-card}
+::: {.challenge-card}
 ### Speed vs. Stability
 A faster controller is not always better. Aggressive throttle and steering can reduce lap time in theory, but in practice they often increase drift, overshoot, and recovery time.
 :::
