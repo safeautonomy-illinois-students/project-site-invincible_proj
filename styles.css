@@ -326,6 +326,20 @@ body {
 
 .challenge-card p { font-size: 1.15rem; }
 
+.flowchart-wrap {
+  text-align: center;
+  margin: 1.8rem auto 1.2rem auto;
+}
+
+.flowchart-wrap img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 18px;
+  box-shadow: 0 10px 26px rgba(12, 32, 58, 0.10);
+  background: rgba(255,255,255,0.75);
+  padding: 0.8rem;
+}
+
 .feature-card,
 .resource-card {
   padding: 1.35rem 1.25rem;

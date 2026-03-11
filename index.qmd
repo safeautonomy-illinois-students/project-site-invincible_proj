@@ -148,11 +148,14 @@ For navigation, we implement the A* Algorithm to compute the optimal path throug
 :::
 :::
 
+::: {.flowchart-wrap}
+![System flowchart for the F1TENTH autonomous driving pipeline.](flowchart.svg){width="72%"}
+:::
+
+
 ::: {.content-text}
 
 :::
-
-![System flowchart for the autonomous racing pipeline.](static/images/mermaid-diagram.png){width="80%"}
 
 :::
 
