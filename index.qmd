@@ -224,193 +224,51 @@ Later working on the algorithm.
 :::
 
 
-::: {#sensors-data-flow .section-container}
 
-## Sensors and Data Flow {.section-title}
+::: {#sensors-inputs .section-container}
 
-::: {.content-text}
-
-<style>
-  .data-flow-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-    font-size: 0.95em;
-    font-family: sans-serif;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
-  }
-  
-  .data-flow-table thead tr {
-    background-color: #E84A27; /* UIUC Orange */
-    color: #ffffff;
-    text-align: left;
-  }
-  
-  .data-flow-table th,
-  .data-flow-table td {
-    padding: 12px 15px;
-    border: 1px solid #dddddd;
-  }
-  
-  .data-flow-table tbody tr {
-    border-bottom: 1px solid #dddddd;
-  }
-  
-  .data-flow-table tbody tr:nth-of-type(even) {
-    background-color: #f9f9f9;
-  }
-  
-  .data-flow-table tbody tr:last-of-type {
-    border-bottom: 2px solid #E84A27;
-  }
-
-  .topic-code {
-    background-color: #eeeeee;
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-family: monospace;
-    font-size: 0.9em;
-    color: #d35400;
-  }
-</style>
-
-<table class="data-flow-table">
-  <thead>
-    <tr>
-      <th>Algorithm Module</th>
-      <th>Required Sensor</th>
-      <th>ROS 2 Topic (Data Transfer)</th>
-      <th>How the Data is Used</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>Reactive Safety (AEB)</strong></td>
-      <td>LiDAR (Hokuyo / Simulator)</td>
-      <td><span class="topic-code">/ego_racecar/scan</span></td>
-      <td>Constantly monitors the 1080 laser beams. If distance divided by current velocity drops below 0.005s, it triggers an emergency stop.</td>
-    </tr>
-    <tr>
-      <td><strong>Mapping & Localization</strong></td>
-      <td>LiDAR & Motor Encoders</td>
-      <td><span class="topic-code">/ego_racecar/scan</span><br><span class="topic-code">/ego_racecar/odom</span></td>
-      <td>Combines the laser scans with the wheel odometry (how much the wheels have turned) to pinpoint the exact x, y location of the car on the track.</td>
-    </tr>
-    <tr>
-      <td><strong>Obstacle Avoidance (FTG)</strong></td>
-      <td>LiDAR (Hokuyo / Simulator)</td>
-      <td><span class="topic-code">/ego_racecar/scan</span></td>
-      <td>Reads the array of distances. Finds the largest continuous block of high-distance values (the "gap") and calculates a steering angle to aim for it.</td>
-    </tr>
-    <tr>
-      <td><strong>Path Tracking (Control)</strong></td>
-      <td>Algorithms (Internal State)</td>
-      <td><span class="topic-code">/ego_racecar/odom</span><br>→ <em>Outputs to:</em><br><span class="topic-code">/ego_racecar/drive</span></td>
-      <td>Takes the current speed and position, compares it to the optimal racing line, and sends physical steering and speed commands to the VESC/Simulator.</td>
-    </tr>
-  </tbody>
-</table>
-
-:::
-:::
-
-
-
-::: {#future .section-container}
-
-## Future Improvements {.section-title}
+## Sensors and Inputs {.section-title}
 
 ::: {.content-text}
 
-<style>
-  /* Table Styling */
-  .algo-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-    font-size: 1em;
-    font-family: sans-serif;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
-  }
-  
-  .algo-table thead tr {
-    background-color: #003366; /* UIUC Blue-ish */
-    color: #ffffff;
-    text-align: left;
-  }
-  
-  .algo-table th,
-  .algo-table td {
-    padding: 12px 15px;
-    border: 1px solid #dddddd;
-  }
-  
-  .algo-table tbody tr {
-    border-bottom: 1px solid #dddddd;
-  }
-  
-  .algo-table tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
-  }
-  
-  .algo-table tbody tr:last-of-type {
-    border-bottom: 2px solid #003366;
-  }
-
-  /* Badge Styling for Status */
-  .status-badge {
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 0.85em;
-    font-weight: bold;
-    color: white;
-  }
-  .status-todo { background-color: #f39c12; }
-  .status-doing { background-color: #3498db; }
-  .status-done { background-color: #2ecc71; }
-</style>
-
-<table class="algo-table">
-  <thead>
-    <tr>
-      <th>Phase</th>
-      <th>Algorithm / Method</th>
-      <th>Objective</th>
-      <th>Status</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>1. Mapping (Sense)</strong></td>
-      <td>Google Cartographer (SLAM)</td>
-      <td>Generate a high-resolution 2D occupancy grid of the simulator track.</td>
-      <td><span class="status-done">Done</span></td>
-    </tr>
-    <tr>
-      <td><strong>2. Global Plan (Plan)</strong></td>
-      <td>A* / Minimum Curvature</td>
-      <td>Calculate the absolute fastest racing line while maintaining a safety margin from walls.</td>
-      <td><span class="status-doing">In Progress</span></td>
-    </tr>
-    <tr>
-      <td><strong>3. Control (Act)</strong></td>
-      <td>Pure Pursuit / Stanley</td>
-      <td>Translate the optimal racing line into specific steering and throttle commands.</td>
-      <td><span class="status-todo">To Do</span></td>
-    </tr>
-    <tr>
-      <td><strong>4. Safety Fallback</strong></td>
-      <td>TTC / Automatic Emergency Braking</td>
-      <td>Prevent the +10s rescue penalty by overriding controls if a collision is imminent.</td>
-      <td><span class="status-todo">To Do</span></td>
-    </tr>
-  </tbody>
-</table>
+| Part | Uses What Data | Sends What Next |
+|---|---|---|
+| LiDAR | Distance and obstacle measurements | Range data to perception |
+| Camera | Track images and visual information | Image data to perception |
+| IMU | Motion and orientation data | State data to estimation / control |
+| Perception | LiDAR + camera data | Free-space and track understanding to planning |
+| State Estimation | IMU data | Vehicle pose / heading to planning and control |
+| Planning | Perception + state information | Target path or waypoint to control |
+| Control | Planned target + current vehicle state | Steering and speed commands to the car |
+| Vehicle | Drive commands | New movement and new sensor data |
 
 :::
 :::
 
 
+
+::: {.section-container}
+
+## Plan {.section-title}
+
+::: {.content-text}
+
+| Step | Main Task | Goal / Output |
+|---|---|---|
+| Step 1 | Set up the F1TENTH platform and software environment | Make sure the car, ROS, and sensor drivers run correctly |
+| Step 2 | Collect and verify sensor data | Confirm LiDAR, camera, and IMU data can be read reliably |
+| Step 3 | Build the perception module | Detect walls, free space, and useful track features |
+| Step 4 | Add state estimation | Estimate vehicle heading, motion, and current state |
+| Step 5 | Develop the planning module | Choose a safe and efficient path or target waypoint |
+| Step 6 | Design the control module | Convert the planned path into steering and speed commands |
+| Step 7 | Integrate all modules together | Make sensing, planning, and control run as one full pipeline |
+| Step 8 | Test in simulation | Debug the system and tune parameters safely |
+| Step 9 | Test on the real car | Verify stable driving on the actual F1TENTH vehicle |
+| Step 10 | Improve performance | Reduce lap time, improve smoothness, and increase stability |
+| Step 11 | Final evaluation and demo | Record results, compare runs, and prepare the final presentation |
+:::
+
+:::
 
 
 
