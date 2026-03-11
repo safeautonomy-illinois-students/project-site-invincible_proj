@@ -1,257 +1,282 @@
----
-pagetitle: "Your Project Title"
-format:
-  html:
-    toc: false
-    page-layout: full
----
-
-::: {.hero-section}
-
-# F1tenth: invincible_proj {.title}
-
-::: {.subtitle}
-Time Trial ECE484 final project
-:::
-
-::: {.author-list}
-
-[**Zhenyu Zhang**](https://example.com)^1^,
-[**Yuanzhe Wang**](https://example.com)^2^,
-[**Murphy Huang**](https://example.com)^1,2^
-
-:::
-
-::: {.affiliation-list}
-
-^1^University of Illinois Urbana-Champaign,  ^2^ECE484
-
-:::
-
-::: {.button-row}
-
-[[{{< fa file-pdf >}} Paper]{.btn-text}](https://arxiv.org/pdf/XXXX.XXXXX){.btn .btn-primary}
-[[{{< fa brands arxiv >}} arXiv]{.btn-text}](https://arxiv.org/abs/XXXX.XXXXX){.btn .btn-primary}
-[[{{< fa video >}} Video]{.btn-text}](https://www.youtube.com/watch?v=cSQTZoZPJzs){.btn .btn-primary}
-[[{{< fa brands github >}} Code]{.btn-text}](https://github.com/safeautonomy-illinois-students/project-site-invincible_proj/){.btn .btn-primary}
-[[{{< fa database >}} Data]{.btn-text}](https://example.com){.btn .btn-primary}
-
-:::
-
-:::
-
-
-<!-- ============================================================ -->
-<!-- TEASER IMAGE / VIDEO -->
-<!-- ============================================================ -->
-
-::: {.section-container}
-
-::: {.hero-teaser}
-
-<!-- Option A: Use a static image as the teaser -->
-![Teaser figure showing your method overview or key result.](static/images/placeholder-teaser.svg){.teaser-img}
-
-<!-- Option B: Embed a video teaser (uncomment below, comment out image above)
-{{< video static/videos/teaser.mp4 >}}
--->
-
-:::
-
-:::
-
-
-<!-- ============================================================ -->
-<!-- ABSTRACT -->
-<!-- ============================================================ -->
-
-::: {.section-container}
-
-## Abstract {.section-title}
-
-::: {.abstract-text}
-Replace this text with your project abstract. Describe the problem you are
-solving, the key insight or contribution of your work, and the main results.
-Keep it concise — typically 150–250 words. You can use **bold** and *italic*
-formatting to emphasize key terms.
-
-For example: We present a novel approach to [task] that achieves
-state-of-the-art results on [benchmark]. Our method leverages [key technique]
-to overcome [limitation of prior work]. Experiments demonstrate that our
-approach outperforms existing methods by [metric improvement] while requiring
-[efficiency gain].
-:::
-
-:::
-
-
-<!-- ============================================================ -->
-<!-- OVERVIEW / METHOD VIDEO -->
-<!-- ============================================================ -->
-
-::: {.section-container}
-
-## Video {.section-title}
-
-::: {.video-container}
-<!-- Replace with your YouTube or local video embed -->
-{{< video https://www.youtube.com/embed/cSQTZoZPJzs >}}
-:::
-
-:::
-
-
-<!-- ============================================================ -->
-<!-- RESULTS GALLERY -->
-<!-- ============================================================ -->
-
-::: {.section-container}
-
-## Results {.section-title}
-
-::: {.content-text}
-Provide a brief description of the results shown below. Explain what the
-reader should observe and why it matters.
-:::
-
-::: {.results-grid}
-
-::: {.result-card}
-![Result 1 caption](static/images/placeholder-result1.svg)
-:::
-
-::: {.result-card}
-![Result 2 caption](static/images/placeholder-result2.svg)
-:::
-
-::: {.result-card}
-![Result 3 caption](static/images/placeholder-result3.svg)
-:::
-
-:::
-
-:::
-
-
-<!-- ============================================================ -->
-<!-- QUALITATIVE COMPARISONS -->
-<!-- ============================================================ -->
-
-::: {.section-container}
-
-## Qualitative Comparisons {.section-title}
-
-::: {.content-text}
-Describe the comparison setup — which baselines are you comparing against, and
-what should the reader look for in the side-by-side results.
-:::
-
-::: {.comparison-grid}
-
-::: {.comparison-item}
-![Ours](static/images/placeholder-ours.svg)
-
-**Ours**
-:::
-
-::: {.comparison-item}
-![Baseline A](static/images/placeholder-baseline.svg)
-
-**Baseline A**
-:::
-
-:::
-
-:::
-
-
-<!-- ============================================================ -->
-<!-- INTERACTIVE SLIDER (Optional) -->
-<!-- ============================================================ -->
-
-::: {.section-container}
-
-## Interpolation Demo {.section-title}
-
-::: {.content-text}
-If your method supports interpolation or continuous control, you can add an
-interactive slider here. The example below shows how to set one up.
-:::
-
-::: {.interpolation-panel}
-
-::: {.interpolation-endpoints}
-![Start](static/images/placeholder-start.svg){.endpoint-img}
-
-![End](static/images/placeholder-end.svg){.endpoint-img}
-:::
-
-<input type="range" min="0" max="100" value="50" class="interpolation-slider" id="interpolation-slider">
-<div id="interpolation-value" class="interpolation-value">50%</div>
-
-<script>
-  const slider = document.getElementById('interpolation-slider');
-  const display = document.getElementById('interpolation-value');
-  slider.addEventListener('input', function() {
-    display.textContent = this.value + '%';
-  });
-</script>
-
-:::
-
-:::
-
-
-<!-- ============================================================ -->
-<!-- RELATED WORK -->
-<!-- ============================================================ -->
-
-::: {.section-container}
-
-## Related Work {.section-title}
-
-::: {.content-text}
-
-Here are some related works in this area:
-
-- [Related Paper 1](https://example.com) introduces an idea similar to ours for [topic].
-- [Related Paper 2](https://example.com) also addresses [problem] using [approach].
-- [Related Paper 3](https://example.com) proposes [technique] which is complementary to our method.
-
-Check out [this survey](https://example.com) for a comprehensive overview of the field.
-:::
-
-:::
-
-
-<!-- ============================================================ -->
-<!-- BIBTEX -->
-<!-- ============================================================ -->
-
-::: {.section-container}
-
-## BibTeX {.section-title}
-
-```bibtex
-@article{yourname2026project,
-  author    = {Author One and Author Two and Author Three},
-  title     = {Your Project Title Here},
-  journal   = {Conference or Journal Name},
-  year      = {2026},
-}
-```
-
-:::
-
-
-<!-- ============================================================ -->
-<!-- FOOTER -->
-<!-- ============================================================ -->
-
-::: {.site-footer}
-
-This website template is adapted from the
-[Nerfies](https://nerfies.github.io) project page, which is licensed under a
-[Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
-
-:::
+<nav class="nav">
+  <div class="container nav-inner">
+    <div class="brand">
+      <div class="brand-mark"></div>
+      <div>Team [invincible_proj] · F1TENTH</div>
+    </div>
+    <div class="nav-links">
+      <a href="#overview">Overview</a>
+      <a href="#video">Demo</a>
+      <a href="#architecture">Architecture</a>
+      <a href="#method">Method</a>
+      <a href="#team">Team</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero container">
+  <div class="eyebrow">ECE 484 · Principles of Safe Autonomy</div>
+  <h1>
+    F1TENTH Time Trial Challenge:<br>
+    <span class="title-accent">Reactive Racing Pipeline for Fast and Safe Autonomous Driving</span>
+  </h1>
+  <p class="subtitle">
+    Our goal is to complete a 3-lap autonomous time trial as quickly and reliably as possible.
+    Using onboard LiDAR, reactive free-space reasoning, and an optimized Pure Pursuit controller,
+    we aim to reduce crash penalties and manual rescues while preserving smooth, high-speed navigation.
+  </p>
+  <div class="authors">[Yuanzhe Wang] · [Zhenyu Zhang] · [Murphy Huang]</div>
+  <div class="course">University of Illinois Urbana-Champaign · Spring 2026</div>
+
+  <div class="stat-row">
+    <div class="stat">
+      <strong>3-Lap Goal</strong>
+      <span>Finish the time trial with consistent, penalty-free autonomous performance.</span>
+    </div>
+    <div class="stat">
+      <strong>LiDAR-Driven</strong>
+      <span>Use local perception and reactive gap reasoning without hardware modifications.</span>
+    </div>
+    <div class="stat">
+      <strong>ROS 2 Pipeline</strong>
+      <span>Closed-loop data flow from /scan and /odom to Ackermann drive commands.</span>
+    </div>
+  </div>
+
+  <div class="button-row">
+    <a class="button primary" href="#video">Watch Simulator Demo</a>
+    <a class="button" href="#architecture">System Block Diagram</a>
+    <a class="button" href="#team">Task Allocation</a>
+  </div>
+</header>
+
+<main class="container">
+  <section id="overview">
+    <div class="section-head">
+      <div>
+        <div class="section-tag">Race Strategy</div>
+        <h2 class="section-title">Project Overview & Approach</h2>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <p class="section-lead" style="margin-top:0; margin-bottom:14px; max-width:none;">
+          To tackle the F1TENTH Time Trial without changing hardware, we focus on a software-first racing stack.
+          Our system uses LiDAR-based reactive navigation to identify traversable free space, select safe and efficient local targets,
+          and generate smooth steering and speed commands through Pure Pursuit-based control.
+        </p>
+        <div class="feature-list">
+          <div class="feature-item">
+            <div class="feature-icon">01</div>
+            <div>
+              <strong>Fast local perception</strong>
+              <span>Continuously process scan data to understand track structure and obstacle proximity in real time.</span>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">02</div>
+            <div>
+              <strong>Gap-aware target selection</strong>
+              <span>Choose feasible local goals that balance safety, forward progress, and stability during turns.</span>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">03</div>
+            <div>
+              <strong>Penalty reduction</strong>
+              <span>Minimize collisions and rescues by improving robustness in narrow or high-curvature track segments.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="placeholder small">
+          <div>
+            <strong style="font-size:1.1rem;">Add a hero racing image, car render, or track screenshot here</strong>
+            <p class="muted">Best choice: one dramatic F1TENTH car image with RViz or track overlay.</p>
+          </div>
+          <div class="track-line"></div>
+        </div>
+        <p class="caption">Use this visual area to immediately create an F1 racing identity when the page loads.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="video">
+    <div class="section-head">
+      <div>
+        <div class="section-tag">Preliminary Demo</div>
+        <h2 class="section-title">Simulator Validation</h2>
+      </div>
+    </div>
+    <p class="section-lead">
+      We have successfully configured the F1TENTH ROS 2 simulation environment. The video below should demonstrate the initial vehicle setup,
+      occupancy grid map, LiDAR scans in RViz2, and the first closed-loop validation of motion and sensing.
+    </p>
+    <div class="card">
+      <div class="placeholder">
+        <div>
+          <strong style="font-size:1.15rem;">[Embed your RViz2 / Simulator Demo Video Here]</strong>
+          <p class="muted">Replace this box with your screen recording, YouTube iframe, or MP4 preview.</p>
+        </div>
+        <div class="track-line"></div>
+      </div>
+      <p class="caption">
+        Suggested content: spawn scene, teleop or initial autonomous motion, LiDAR visualization, and track-following behavior.
+      </p>
+    </div>
+  </section>
+
+  <section id="architecture">
+    <div class="section-head">
+      <div>
+        <div class="section-tag">System Design</div>
+        <h2 class="section-title">ROS 2 Closed-Loop Architecture</h2>
+      </div>
+    </div>
+    <p class="section-lead">
+      Our system is organized as a clean closed-loop pipeline: sensor topics provide local scene information, perception modules infer free space,
+      goal-generation logic selects an actionable target, and the controller converts this target into Ackermann steering and speed commands.
+    </p>
+    <div class="card">
+      <div class="pipeline">
+        <div class="pipe-box">
+          <strong>/scan + /odom</strong>
+          <span>LiDAR and vehicle state input</span>
+        </div>
+        <div class="pipe-box">
+          <strong>Preprocessing</strong>
+          <span>Filter noise and structure useful local observations</span>
+        </div>
+        <div class="pipe-box">
+          <strong>Gap Detection</strong>
+          <span>Identify safe free-space candidates</span>
+        </div>
+        <div class="pipe-box">
+          <strong>Target Generation</strong>
+          <span>Select local waypoint or target heading</span>
+        </div>
+        <div class="pipe-box">
+          <strong>Pure Pursuit</strong>
+          <span>Compute steering and speed commands</span>
+        </div>
+        <div class="pipe-box">
+          <strong>/drive</strong>
+          <span>Ackermann output to simulator or car</span>
+        </div>
+      </div>
+      <div style="height:18px"></div>
+      <div class="placeholder small">
+        <div>
+          <strong style="font-size:1.1rem;">[Insert your polished block diagram here]</strong>
+          <p class="muted">Keep the arrows and module names consistent with the pipeline above.</p>
+        </div>
+      </div>
+      <p class="caption">
+        Figure 1. End-to-end data flow from local sensing to final control commands, with future deployment onto the Jetson-based physical platform.
+      </p>
+    </div>
+  </section>
+
+  <section id="method">
+    <div class="section-head">
+      <div>
+        <div class="section-tag">Core Logic</div>
+        <h2 class="section-title">Method Breakdown</h2>
+      </div>
+    </div>
+    <div class="method-list">
+      <div class="mini-card">
+        <h3>1. LiDAR Processing</h3>
+        <ul>
+          <li>Filter invalid range values and optionally constrain the field of view.</li>
+          <li>Stabilize scan interpretation for local decision-making.</li>
+          <li>Prepare structured observations for downstream free-space analysis.</li>
+        </ul>
+      </div>
+      <div class="mini-card">
+        <h3>2. Gap Detection</h3>
+        <ul>
+          <li>Detect candidate traversable regions from local scan geometry.</li>
+          <li>Measure angular width, clearance, and relative safety of each gap.</li>
+          <li>Reject weak candidates that could increase crash risk.</li>
+        </ul>
+      </div>
+      <div class="mini-card">
+        <h3>3. Goal Generation</h3>
+        <ul>
+          <li>Select a target direction or local waypoint from the chosen gap.</li>
+          <li>Bias the choice toward forward progress and smoother future motion.</li>
+          <li>Reduce oscillation through practical heuristics and filtering.</li>
+        </ul>
+      </div>
+      <div class="mini-card">
+        <h3>4. Pure Pursuit Control</h3>
+        <ul>
+          <li>Convert local targets into Ackermann steering commands.</li>
+          <li>Adjust speed according to curvature, stability, or risk level.</li>
+          <li>Maintain smooth closed-loop behavior across straightaways and turns.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="results-note">
+      A strong improvement for the final version would be to add one small diagram under each block, such as a LiDAR polar plot, a gap visualization, and a waypoint-to-curvature sketch.
+    </div>
+  </section>
+
+  <section id="team">
+    <div class="section-head">
+      <div>
+        <div class="section-tag">Execution Plan</div>
+        <h2 class="section-title">Team Plan & Task Allocation</h2>
+      </div>
+    </div>
+    <p class="section-lead">
+      To move efficiently from simulator validation to real vehicle deployment, the project is divided into tightly coupled technical tracks.
+    </p>
+    <div class="allocation-grid">
+      <div class="member-card">
+        <div class="member-role">Perception</div>
+        <h3>[Teammate 1 Name]</h3>
+        <ul>
+          <li><strong>Focus:</strong> LiDAR processing and gap detection</li>
+          <li>Filter scan noise and build robust free-space interpretation.</li>
+          <li>Implement detection logic for safe, traversable local gaps.</li>
+        </ul>
+      </div>
+      <div class="member-card">
+        <div class="member-role">Control</div>
+        <h3>[Teammate 2 Name]</h3>
+        <ul>
+          <li><strong>Focus:</strong> Pure Pursuit and speed policy</li>
+          <li>Transform local targets into stable steering outputs.</li>
+          <li>Tune control behavior for faster and smoother lap performance.</li>
+        </ul>
+      </div>
+      <div class="member-card">
+        <div class="member-role">Localization</div>
+        <h3>[Teammate 3 Name]</h3>
+        <ul>
+          <li><strong>Focus:</strong> Odometry, TF, and environment understanding</li>
+          <li>Maintain correct frame relationships and motion context.</li>
+          <li>Support future track-aware improvements if mapping is introduced.</li>
+        </ul>
+      </div>
+      <div class="member-card">
+        <div class="member-role">Integration</div>
+        <h3>[Teammate 4 Name]</h3>
+        <ul>
+          <li><strong>Focus:</strong> ROS 2 integration and hardware deployment</li>
+          <li>Ensure node communication and stable system bring-up.</li>
+          <li>Lead the simulator-to-Jetson deployment path for Milestone 3.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer container">
+  <div>Created for ECE 484: Principles of Safe Autonomy · Styled as a racing-inspired F1TENTH project page.</div>
+</footer>
