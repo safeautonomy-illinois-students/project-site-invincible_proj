@@ -89,7 +89,7 @@ We approach the problem as a full autonomy stack. The vehicle uses onboard sensi
 ::: {.section-band}
 ::: {#challenge .section-container}
 
-## Why Time Trial Is Interesting {.section-title}
+## Designed algorism plan  {.section-title}
 
 ::: {.challenge-grid}
 ::: {.challenge-card}
@@ -128,25 +128,25 @@ The final implementation can follow several successful F1TENTH strategies, but m
 ::: {.pipeline-step}
 <div class="step-number">01</div>
 <h3>Sensing</h3>
-<p>Collect LiDAR scans, camera frames, and IMU motion measurements from the stock vehicle platform.</p>
+<p>.</p>
 :::
 
 ::: {.pipeline-step}
 <div class="step-number">02</div>
 <h3>Track Understanding</h3>
-<p>Estimate free space, wall boundaries, lane-like structure, or a target corridor that the vehicle can safely follow.</p>
+<p>.</p>
 :::
 
 ::: {.pipeline-step}
 <div class="step-number">03</div>
 <h3>Planning</h3>
-<p>Generate a steering objective such as the largest safe gap, a lookahead waypoint, a local centerline, or a curvature-aware driving target.</p>
+<p>.</p>
 :::
 
 ::: {.pipeline-step}
 <div class="step-number">04</div>
 <h3>Control</h3>
-<p>Convert the target into steering and speed commands while balancing tracking accuracy, smoothness, and stability through turns.</p>
+<p>.</p>
 :::
 :::
 
@@ -206,42 +206,9 @@ This section is where visitors can immediately see the car’s behavior on track
 A strong evaluation should combine <strong>speed</strong> and <strong>robustness</strong>. The best system is not necessarily the one with the single most aggressive run, but the one that repeatedly produces fast, clean laps. Consider presenting results with lap times, completion rate, controller smoothness, and failure cases such as wall approaches, steering oscillation, or late braking near tight turns.
 :::
 
-::: {.comparison-table-wrap}
-| Category | Baseline Controller | Final Controller |
-|---|---:|---:|
-| Mean lap time | TBD | TBD |
-| Best lap time | TBD | TBD |
-| Successful runs / total | TBD | TBD |
-| Max stable speed | TBD | TBD |
-| Steering smoothness | TBD | TBD |
 :::
 
-:::
 
-::: {.section-band}
-::: {#engineering .section-container}
-
-## Engineering Highlights {.section-title}
-
-::: {.feature-grid}
-::: {.feature-card}
-### Robustness First
-Before pushing for maximum speed, we prioritize reliable sensing and stable control. This reduces crashes and makes later performance tuning more meaningful.
-:::
-
-::: {.feature-card}
-### Latency-Aware Design
-Every extra processing step has a control cost. We choose algorithms that are not only accurate, but also fast enough for repeated real-time updates.
-:::
-
-::: {.feature-card}
-### Test-Refine Loop
-On-track iteration matters. Parameter tuning, corner-case debugging, and failure analysis usually determine race performance more than theory alone.
-:::
-:::
-
-:::
-:::
 
 ::: {#future .section-container}
 
@@ -283,7 +250,7 @@ Race images, trajectory plots, lap-time tables, ROS graph snapshots, and annotat
 ## BibTeX {.section-title}
 
 ```bibtex
-@misc{zhang2026invincibleproj,
+@misc{invincibleproj,
   title        = {invincible\_proj: Autonomous F1TENTH Time Trial Racing},
   author       = {Zhenyu Zhang and Yuanzhe Wang and Murphy Huang},
   year         = {2026},
@@ -293,5 +260,5 @@ Race images, trajectory plots, lap-time tables, ROS graph snapshots, and annotat
 :::
 
 ::: {.site-footer}
-This website is built with Quarto and customized for an F1TENTH autonomous racing project page. The original academic-page layout inspiration comes from the Nerfies project page template.
+This website is built with Quarto for an F1TENTH autonomous racing project page.
 :::
