@@ -1,9 +1,17 @@
+---
+title: "F1TENTH Autonomous Racing - ECE 484"
+format:
+  html:
+    minimal: true
+    css: styles.css
+---
+
 ```{=html}
 <nav class="nav">
   <div class="container nav-inner">
     <div class="brand">
       <div class="brand-mark"></div>
-      <div>Team [invincible_proj] · F1TENTH</div>
+      <div>Team invincible_proj · F1TENTH</div>
     </div>
     <div class="nav-links">
       <a href="#overview">Overview</a>
@@ -26,7 +34,7 @@
     Using onboard LiDAR, reactive free-space reasoning, and an optimized Pure Pursuit controller,
     we aim to reduce crash penalties and manual rescues while preserving smooth, high-speed navigation.
   </p>
-  <div class="authors">[Zhenyu Zhang] · [Murphy Huang] · [Yuanzhe Wang]</div>
+  <div class="authors">[Your Name] · [Teammate 1] · [Teammate 2] · [Teammate 3]</div>
   <div class="course">University of Illinois Urbana-Champaign · Spring 2026</div>
 
   <div class="stat-row">
@@ -56,7 +64,7 @@
     <div class="section-head">
       <div>
         <div class="section-tag">Race Strategy</div>
-        <h2 class="section-title">Project Overview & Approach</h2>
+        <h2 class="section-title">Project Overview &amp; Approach</h2>
       </div>
     </div>
 
@@ -222,16 +230,13 @@
         </ul>
       </div>
     </div>
-    <div class="results-note">
-      A strong improvement for the final version would be to add one small diagram under each block, such as a LiDAR polar plot, a gap visualization, and a waypoint-to-curvature sketch.
-    </div>
   </section>
 
   <section id="team">
     <div class="section-head">
       <div>
         <div class="section-tag">Execution Plan</div>
-        <h2 class="section-title">Team Plan & Task Allocation</h2>
+        <h2 class="section-title">Team Plan &amp; Task Allocation</h2>
       </div>
     </div>
     <p class="section-lead">
@@ -281,4 +286,3 @@
 <footer class="footer container">
   <div>Created for ECE 484: Principles of Safe Autonomy · Styled as a racing-inspired F1TENTH project page.</div>
 </footer>
-```
