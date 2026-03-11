@@ -324,7 +324,7 @@ body {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.challenge-card p { font-size: 0.92rem; }
+.challenge-card p { font-size: 1.4rem; }
 
 .feature-card,
 .resource-card {
