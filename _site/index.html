@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.31">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>index</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+
+
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+
+
+
+
+<nav class="nav">
+<div class="container nav-inner">
+<pre><code>&lt;div class="brand"&gt;
+  &lt;div class="brand-mark"&gt;&lt;/div&gt;
+  &lt;div&gt;Team [invincible_proj] · F1TENTH&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="nav-links"&gt;
+  &lt;a href="#overview"&gt;Overview&lt;/a&gt;
+  &lt;a href="#video"&gt;Demo&lt;/a&gt;
+  &lt;a href="#architecture"&gt;Architecture&lt;/a&gt;
+  &lt;a href="#method"&gt;Method&lt;/a&gt;
+  &lt;a href="#team"&gt;Team&lt;/a&gt;
+&lt;/div&gt;</code></pre>
+</div>
+</nav>
+<header class="hero container">
+<div class="eyebrow">
+ECE 484 · Principles of Safe Autonomy
+</div>
+<h1>
+F1TENTH Time Trial Challenge:<br> <span class="title-accent">Reactive Racing Pipeline for Fast and Safe Autonomous Driving</span>
+</h1>
+<p class="subtitle">
+Our goal is to complete a 3-lap autonomous time trial as quickly and reliably as possible. Using onboard LiDAR, reactive free-space reasoning, and an optimized Pure Pursuit controller, we aim to reduce crash penalties and manual rescues while preserving smooth, high-speed navigation.
+</p>
+<div class="authors">
+[Yuanzhe Wang] · [Zhenyu Zhang] · [Murphy Huang]
+</div>
+<div class="course">
+University of Illinois Urbana-Champaign · Spring 2026
+</div>
+<div class="stat-row">
+<pre><code>&lt;div class="stat"&gt;
+  &lt;strong&gt;3-Lap Goal&lt;/strong&gt;
+  &lt;span&gt;Finish the time trial with consistent, penalty-free autonomous performance.&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class="stat"&gt;
+  &lt;strong&gt;LiDAR-Driven&lt;/strong&gt;
+  &lt;span&gt;Use local perception and reactive gap reasoning without hardware modifications.&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class="stat"&gt;
+  &lt;strong&gt;ROS 2 Pipeline&lt;/strong&gt;
+  &lt;span&gt;Closed-loop data flow from /scan and /odom to Ackermann drive commands.&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+</div>
+<div class="button-row">
+<pre><code>&lt;a class="button primary" href="#video"&gt;Watch Simulator Demo&lt;/a&gt;
+&lt;a class="button" href="#architecture"&gt;System Block Diagram&lt;/a&gt;
+&lt;a class="button" href="#team"&gt;Task Allocation&lt;/a&gt;</code></pre>
+</div>
+</header>
+<main class="container"><header id="title-block-header" class="quarto-title-block"></header>
+<section id="overview">
+<div class="section-head">
+<pre><code>  &lt;div&gt;
+    &lt;div class="section-tag"&gt;Race Strategy&lt;/div&gt;
+    &lt;h2 class="section-title"&gt;Project Overview &amp; Approach&lt;/h2&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="grid-2"&gt;
+  &lt;div class="card"&gt;
+    &lt;p class="section-lead" style="margin-top:0; margin-bottom:14px; max-width:none;"&gt;
+      To tackle the F1TENTH Time Trial without changing hardware, we focus on a software-first racing stack.
+      Our system uses LiDAR-based reactive navigation to identify traversable free space, select safe and efficient local targets,
+      and generate smooth steering and speed commands through Pure Pursuit-based control.
+    &lt;/p&gt;
+    &lt;div class="feature-list"&gt;
+      &lt;div class="feature-item"&gt;
+        &lt;div class="feature-icon"&gt;01&lt;/div&gt;
+        &lt;div&gt;
+          &lt;strong&gt;Fast local perception&lt;/strong&gt;
+          &lt;span&gt;Continuously process scan data to understand track structure and obstacle proximity in real time.&lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class="feature-item"&gt;
+        &lt;div class="feature-icon"&gt;02&lt;/div&gt;
+        &lt;div&gt;
+          &lt;strong&gt;Gap-aware target selection&lt;/strong&gt;
+          &lt;span&gt;Choose feasible local goals that balance safety, forward progress, and stability during turns.&lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class="feature-item"&gt;
+        &lt;div class="feature-icon"&gt;03&lt;/div&gt;
+        &lt;div&gt;
+          &lt;strong&gt;Penalty reduction&lt;/strong&gt;
+          &lt;span&gt;Minimize collisions and rescues by improving robustness in narrow or high-curvature track segments.&lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class="card"&gt;
+    &lt;div class="placeholder small"&gt;
+      &lt;div&gt;
+        &lt;strong style="font-size:1.1rem;"&gt;Add a hero racing image, car render, or track screenshot here&lt;/strong&gt;
+        &lt;p class="muted"&gt;Best choice: one dramatic F1TENTH car image with RViz or track overlay.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class="track-line"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;p class="caption"&gt;Use this visual area to immediately create an F1 racing identity when the page loads.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div></section>
+<section id="video">
+<div class="section-head">
+<pre><code>  &lt;div&gt;
+    &lt;div class="section-tag"&gt;Preliminary Demo&lt;/div&gt;
+    &lt;h2 class="section-title"&gt;Simulator Validation&lt;/h2&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p class="section-lead"&gt;
+  We have successfully configured the F1TENTH ROS 2 simulation environment. The video below should demonstrate the initial vehicle setup,
+  occupancy grid map, LiDAR scans in RViz2, and the first closed-loop validation of motion and sensing.
+&lt;/p&gt;
+&lt;div class="card"&gt;
+  &lt;div class="placeholder"&gt;
+    &lt;div&gt;
+      &lt;strong style="font-size:1.15rem;"&gt;[Embed your RViz2 / Simulator Demo Video Here]&lt;/strong&gt;
+      &lt;p class="muted"&gt;Replace this box with your screen recording, YouTube iframe, or MP4 preview.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="track-line"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;p class="caption"&gt;
+    Suggested content: spawn scene, teleop or initial autonomous motion, LiDAR visualization, and track-following behavior.
+  &lt;/p&gt;
+&lt;/div&gt;</code></pre>
+</div></section>
+<section id="architecture">
+<div class="section-head">
+<pre><code>  &lt;div&gt;
+    &lt;div class="section-tag"&gt;System Design&lt;/div&gt;
+    &lt;h2 class="section-title"&gt;ROS 2 Closed-Loop Architecture&lt;/h2&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p class="section-lead"&gt;
+  Our system is organized as a clean closed-loop pipeline: sensor topics provide local scene information, perception modules infer free space,
+  goal-generation logic selects an actionable target, and the controller converts this target into Ackermann steering and speed commands.
+&lt;/p&gt;
+&lt;div class="card"&gt;
+  &lt;div class="pipeline"&gt;
+    &lt;div class="pipe-box"&gt;
+      &lt;strong&gt;/scan + /odom&lt;/strong&gt;
+      &lt;span&gt;LiDAR and vehicle state input&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class="pipe-box"&gt;
+      &lt;strong&gt;Preprocessing&lt;/strong&gt;
+      &lt;span&gt;Filter noise and structure useful local observations&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class="pipe-box"&gt;
+      &lt;strong&gt;Gap Detection&lt;/strong&gt;
+      &lt;span&gt;Identify safe free-space candidates&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class="pipe-box"&gt;
+      &lt;strong&gt;Target Generation&lt;/strong&gt;
+      &lt;span&gt;Select local waypoint or target heading&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class="pipe-box"&gt;
+      &lt;strong&gt;Pure Pursuit&lt;/strong&gt;
+      &lt;span&gt;Compute steering and speed commands&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class="pipe-box"&gt;
+      &lt;strong&gt;/drive&lt;/strong&gt;
+      &lt;span&gt;Ackermann output to simulator or car&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div style="height:18px"&gt;&lt;/div&gt;
+  &lt;div class="placeholder small"&gt;
+    &lt;div&gt;
+      &lt;strong style="font-size:1.1rem;"&gt;[Insert your polished block diagram here]&lt;/strong&gt;
+      &lt;p class="muted"&gt;Keep the arrows and module names consistent with the pipeline above.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;p class="caption"&gt;
+    Figure 1. End-to-end data flow from local sensing to final control commands, with future deployment onto the Jetson-based physical platform.
+  &lt;/p&gt;
+&lt;/div&gt;</code></pre>
+</div></section>
+<section id="method">
+<div class="section-head">
+<pre><code>  &lt;div&gt;
+    &lt;div class="section-tag"&gt;Core Logic&lt;/div&gt;
+    &lt;h2 class="section-title"&gt;Method Breakdown&lt;/h2&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="method-list"&gt;
+  &lt;div class="mini-card"&gt;
+    &lt;h3&gt;1. LiDAR Processing&lt;/h3&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Filter invalid range values and optionally constrain the field of view.&lt;/li&gt;
+      &lt;li&gt;Stabilize scan interpretation for local decision-making.&lt;/li&gt;
+      &lt;li&gt;Prepare structured observations for downstream free-space analysis.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;div class="mini-card"&gt;
+    &lt;h3&gt;2. Gap Detection&lt;/h3&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Detect candidate traversable regions from local scan geometry.&lt;/li&gt;
+      &lt;li&gt;Measure angular width, clearance, and relative safety of each gap.&lt;/li&gt;
+      &lt;li&gt;Reject weak candidates that could increase crash risk.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;div class="mini-card"&gt;
+    &lt;h3&gt;3. Goal Generation&lt;/h3&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Select a target direction or local waypoint from the chosen gap.&lt;/li&gt;
+      &lt;li&gt;Bias the choice toward forward progress and smoother future motion.&lt;/li&gt;
+      &lt;li&gt;Reduce oscillation through practical heuristics and filtering.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;div class="mini-card"&gt;
+    &lt;h3&gt;4. Pure Pursuit Control&lt;/h3&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Convert local targets into Ackermann steering commands.&lt;/li&gt;
+      &lt;li&gt;Adjust speed according to curvature, stability, or risk level.&lt;/li&gt;
+      &lt;li&gt;Maintain smooth closed-loop behavior across straightaways and turns.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="results-note"&gt;
+  A strong improvement for the final version would be to add one small diagram under each block, such as a LiDAR polar plot, a gap visualization, and a waypoint-to-curvature sketch.
+&lt;/div&gt;</code></pre>
+</div></section>
+<section id="team">
+<div class="section-head">
+<pre><code>  &lt;div&gt;
+    &lt;div class="section-tag"&gt;Execution Plan&lt;/div&gt;
+    &lt;h2 class="section-title"&gt;Team Plan &amp; Task Allocation&lt;/h2&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p class="section-lead"&gt;
+  To move efficiently from simulator validation to real vehicle deployment, the project is divided into tightly coupled technical tracks.
+&lt;/p&gt;
+&lt;div class="allocation-grid"&gt;
+  &lt;div class="member-card"&gt;
+    &lt;div class="member-role"&gt;Perception&lt;/div&gt;
+    &lt;h3&gt;[Teammate 1 Name]&lt;/h3&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;Focus:&lt;/strong&gt; LiDAR processing and gap detection&lt;/li&gt;
+      &lt;li&gt;Filter scan noise and build robust free-space interpretation.&lt;/li&gt;
+      &lt;li&gt;Implement detection logic for safe, traversable local gaps.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;div class="member-card"&gt;
+    &lt;div class="member-role"&gt;Control&lt;/div&gt;
+    &lt;h3&gt;[Teammate 2 Name]&lt;/h3&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;Focus:&lt;/strong&gt; Pure Pursuit and speed policy&lt;/li&gt;
+      &lt;li&gt;Transform local targets into stable steering outputs.&lt;/li&gt;
+      &lt;li&gt;Tune control behavior for faster and smoother lap performance.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;div class="member-card"&gt;
+    &lt;div class="member-role"&gt;Localization&lt;/div&gt;
+    &lt;h3&gt;[Teammate 3 Name]&lt;/h3&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;Focus:&lt;/strong&gt; Odometry, TF, and environment understanding&lt;/li&gt;
+      &lt;li&gt;Maintain correct frame relationships and motion context.&lt;/li&gt;
+      &lt;li&gt;Support future track-aware improvements if mapping is introduced.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;div class="member-card"&gt;
+    &lt;div class="member-role"&gt;Integration&lt;/div&gt;
+    &lt;h3&gt;[Teammate 4 Name]&lt;/h3&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;Focus:&lt;/strong&gt; ROS 2 integration and hardware deployment&lt;/li&gt;
+      &lt;li&gt;Ensure node communication and stable system bring-up.&lt;/li&gt;
+      &lt;li&gt;Lead the simulator-to-Jetson deployment path for Milestone 3.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div></section>
+</main>
+<footer class="footer container">
+<div>
+Created for ECE 484: Principles of Safe Autonomy · Styled as a racing-inspired F1TENTH project page.
+</div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+</body></html>
