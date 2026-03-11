@@ -221,21 +221,44 @@ Base setup for the simulator
 Later working on the algorithm.
 :::
 
-```mermaid
-flowchart TD
-    A[Step 1<br/>Finish sensor setup<br/>LiDAR / Camera / IMU]
-    A --> B[Step 2<br/>Build perception module<br/>Detect track and free space]
-    B --> C[Step 3<br/>Develop planning algorithm<br/>Choose safe driving path]
-    C --> D[Step 4<br/>Tune control system<br/>Steering and speed control]
-    D --> E[Step 5<br/>Integrate all modules in ROS]
-    E --> F[Step 6<br/>Test in simulation]
-    F --> G[Step 7<br/>Test on real F1TENTH car]
-    G --> H[Step 8<br/>Improve lap time and stability]
-    H --> I[Step 9<br/>Finalize demo and project results]
-
 :::
 
 
+
+::: {.section-container}
+
+## Papers/websites {.section-title}
+
+::: {.resource-grid}
+::: {.resource-card}
+**Google Cartographer**  
+website:  
+[website](https://google-cartographer-ros.readthedocs.io/en/latest/)
+:::
+
+::: {.resource-card}
+**2D LiDAR SLAM**  
+paper:  
+[paper](https://static.googleusercontent.com/media/research.google.com/zh-CN//pubs/archive/45466.pdf)
+:::
+
+::: {.resource-card}
+**A Algorithm**  
+[paper](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0263841)
+:::
+
+::: {.resource-card}
+**Artificial Potential Fields**  
+[paper](https://pure.tue.nl/ws/portalfiles/portal/360154334/1312049_ControlForUnderactuatedVehiclesWithStateConstraintsUsingArtificialPotentialFields.pdf)
+:::
+
+::: {.resource-card}
+**Proximal Policy Optimization**  
+[paper](https://arxiv.org/abs/1707.06347)
+:::
+:::
+
+:::
 
 
 
