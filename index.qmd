@@ -1,3 +1,4 @@
+```{=html}
 <nav class="nav">
   <div class="container nav-inner">
     <div class="brand">
@@ -280,3 +281,4 @@
 <footer class="footer container">
   <div>Created for ECE 484: Principles of Safe Autonomy · Styled as a racing-inspired F1TENTH project page.</div>
 </footer>
+```
