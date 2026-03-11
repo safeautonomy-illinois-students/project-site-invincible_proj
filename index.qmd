@@ -152,6 +152,8 @@ For navigation, we implement the A* Algorithm to compute the optimal path throug
 
 :::
 
+![System flowchart for the autonomous racing pipeline.](static/images/mermaid-diagram.png){width="80%"}
+
 :::
 
 ::: {.section-band .section-band-dark}
