@@ -1,27 +1,7 @@
 project:
   type: website
-  output-dir: docs
-
-website:
-  title: "invincible_proj"
-  navbar:
-    background: light
-    left:
-      - text: "Overview"
-        href: "#overview"
-      - text: "System"
-        href: "#system"
-      - text: "Demo"
-        href: "#demo"
-      - text: "Results"
-        href: "#results"
-      - text: "Future Work"
-        href: "#future"
 
 format:
   html:
-    theme: cosmo
+    minimal: true
     css: styles.css
-    toc: false
-    page-layout: full
-    smooth-scroll: true
