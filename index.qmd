@@ -19,9 +19,9 @@ Designing a fast, reliable, and competition-ready autonomous race car on a stock
 :::
 
 ::: {.author-list}
-[**Zhenyu Zhang**](https://example.com)^1^,
-[**Yuanzhe Wang**](https://example.com)^1^,
-[**Murphy Huang**](https://example.com)^1^
+**Zhenyu Zhang**,
+**Yuanzhe Wang**,
+**Murphy Huang**
 :::
 
 ::: {.affiliation-list}
@@ -260,6 +260,8 @@ Race images, trajectory plots, lap-time tables, ROS graph snapshots, and annotat
   note         = {ECE 484 final project website},
   howpublished = {GitHub Pages project site}
 }
+```
+
 :::
 
 ::: {.site-footer}
