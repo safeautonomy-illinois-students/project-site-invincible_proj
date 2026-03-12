@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>invincible_proj | F1TENTH Time Trial</title>
+<title>Group Invincible | F1TENTH Time Trial</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -196,8 +196,8 @@ window.Quarto = {
 <div class="hero-badge">
 <p>ECE 484 Final Project · F1TENTH Time Trial</p>
 </div>
-<section id="invincible_proj-autonomous-f1tenth-time-trial-racing" class="level1 title">
-<h1 class="title">invincible_proj: Autonomous F1TENTH Time Trial Racing</h1>
+<section id="group-invincible-f1tenth-time-trial" class="level1 title">
+<h1 class="title">Group Invincible: F1TENTH Time Trial</h1>
 <div class="subtitle">
 <p>Designing a fast, reliable, and competition-ready autonomous race car on a stock F1TENTH platform using onboard sensing, perception, planning, and control.</p>
 </div>
@@ -205,7 +205,7 @@ window.Quarto = {
 <p><strong>Zhenyu Zhang</strong>, <strong>Yuanzhe Wang</strong>, <strong>Murphy Huang</strong></p>
 </div>
 <div class="affiliation-list">
-<p><sup>1</sup>University of Illinois Urbana-Champaign · ECE 484 Autonomous Vehicles</p>
+<p><sup>1</sup>University of Illinois Urbana-Champaign · ECE 484 · Spring 2026</p>
 </div>
 <div class="button-row">
 <p><a href="https://youtu.be/AghdeVoMORM" class="btn btn-primary"><span class="btn-text"><i class="fa-solid fa-video" aria-label="video"></i> Demo Video</span></a> <a href="https://github.com/safeautonomy-illinois-students/project-site-invincible_proj/" class="btn btn-primary"><span class="btn-text"><i class="fa-brands fa-github" aria-label="github"></i> GitHub</span></a> <a href="#system" class="btn btn-primary"><span class="btn-text"><i class="fa-solid fa-flag-checkered" aria-label="flag-checkered"></i> System</span></a> <a href="#results" class="btn btn-primary"><span class="btn-text"><i class="fa-solid fa-chart-line" aria-label="chart-line"></i> Results</span></a></p>
@@ -263,7 +263,7 @@ Project Snapshot
 <section id="overview" class="level2 section-title section-container">
 <h2 class="section-title anchored" data-anchor-id="overview">Overview</h2>
 <div class="abstract-text">
-<p>We approach the problem as a full autonomy stack. The vehicle uses onboard sensing to understand the nearby environment, converts that information into a track-relative driving objective, and then executes that objective through steering and speed control. Depending on the final system design, this can include LiDAR-based free-space reasoning, camera-based track understanding, IMU-assisted stabilization, or a hybrid fusion strategy. The final website is structured to show not only the racing result, but also the engineering decisions behind the result: sensing, planning, control logic, evaluation strategy, and lessons learned from real-car testing.</p>
+<p>We approach the problem as a full autonomy stack. The vehicle uses onboard sensing to understand the nearby environment, converts that information into a track-relative driving objective, and then executes that objective through steering and speed control. The final system design will implement a hybrid strategy with LiDAR and IMU feedback. The final website is structured to show not only the racing result, but also the engineering decisions behind the result: sensing, planning, control logic, evaluation strategy, and lessons learned from real-car testing.</p>
 </div>
 </section>
 <div class="section-band">
@@ -342,7 +342,7 @@ Control
 <div class="flowchart-wrap">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="flowchart.svg" class="img-fluid figure-img" style="width:72.0%"></p>
+<p><img src="block_diagram.png" class="img-fluid figure-img" style="width:72.0%"></p>
 <figcaption>System flowchart for the F1TENTH autonomous driving pipeline.</figcaption>
 </figure>
 </div>
@@ -419,14 +419,180 @@ TBD
 </div>
 </section>
 </div>
+<div id="sensors-inputs" class="section-container">
+<section id="sensors-and-inputs" class="level2 section-title">
+<h2 class="section-title anchored" data-anchor-id="sensors-and-inputs">Sensors and Inputs</h2>
+<div class="content-text">
+<table class="table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Part</th>
+<th>Uses What Data</th>
+<th>Sends What Next</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>LiDAR</td>
+<td>Distance and obstacle measurements</td>
+<td>Range data to perception</td>
+</tr>
+<tr class="even">
+<td>Camera</td>
+<td>Track images and visual information</td>
+<td>Image data to perception</td>
+</tr>
+<tr class="odd">
+<td>IMU</td>
+<td>Motion and orientation data</td>
+<td>State data to estimation / control</td>
+</tr>
+<tr class="even">
+<td>Perception</td>
+<td>LiDAR + camera data</td>
+<td>Free-space and track understanding to planning</td>
+</tr>
+<tr class="odd">
+<td>State Estimation</td>
+<td>IMU data</td>
+<td>Vehicle pose / heading to planning and control</td>
+</tr>
+<tr class="even">
+<td>Planning</td>
+<td>Perception + state information</td>
+<td>Target path or waypoint to control</td>
+</tr>
+<tr class="odd">
+<td>Control</td>
+<td>Planned target + current vehicle state</td>
+<td>Steering and speed commands to the car</td>
+</tr>
+<tr class="even">
+<td>Vehicle</td>
+<td>Drive commands</td>
+<td>New movement and new sensor data</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</div>
+<section id="plan" class="level2 section-title section-container">
+<h2 class="section-title anchored" data-anchor-id="plan">Plan</h2>
+<div class="content-text">
+<table class="table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Step</th>
+<th>Main Task</th>
+<th>Goal / Output</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Step 1</td>
+<td>Set up the F1TENTH platform and software environment</td>
+<td>Make sure the car, ROS, and sensor drivers run correctly</td>
+</tr>
+<tr class="even">
+<td>Step 2</td>
+<td>Collect and verify sensor data</td>
+<td>Confirm LiDAR, camera, and IMU data can be read reliably</td>
+</tr>
+<tr class="odd">
+<td>Step 3</td>
+<td>Build the perception module</td>
+<td>Detect walls, free space, and useful track features</td>
+</tr>
+<tr class="even">
+<td>Step 4</td>
+<td>Add state estimation</td>
+<td>Estimate vehicle heading, motion, and current state</td>
+</tr>
+<tr class="odd">
+<td>Step 5</td>
+<td>Develop the planning module</td>
+<td>Choose a safe and efficient path or target waypoint</td>
+</tr>
+<tr class="even">
+<td>Step 6</td>
+<td>Design the control module</td>
+<td>Convert the planned path into steering and speed commands</td>
+</tr>
+<tr class="odd">
+<td>Step 7</td>
+<td>Integrate all modules together</td>
+<td>Make sensing, planning, and control run as one full pipeline</td>
+</tr>
+<tr class="even">
+<td>Step 8</td>
+<td>Test in simulation</td>
+<td>Debug the system and tune parameters safely</td>
+</tr>
+<tr class="odd">
+<td>Step 9</td>
+<td>Test on the real car</td>
+<td>Verify stable driving on the actual F1TENTH vehicle</td>
+</tr>
+<tr class="even">
+<td>Step 10</td>
+<td>Improve performance</td>
+<td>Reduce lap time, improve smoothness, and increase stability</td>
+</tr>
+<tr class="odd">
+<td>Step 11</td>
+<td>Final evaluation and demo</td>
+<td>Record results, compare runs, and prepare the final presentation</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
 <div id="future" class="section-container">
 <section id="future-improvements" class="level2 section-title">
 <h2 class="section-title anchored" data-anchor-id="future-improvements">Future Improvements</h2>
 <div class="content-text">
-<p>Later working on the algorithm.</p>
+<p>Later work on the algorithm.</p>
 </div>
 </section>
 </div>
+<section id="related-works" class="level2 section-title section-container">
+<h2 class="section-title anchored" data-anchor-id="related-works">Related Works</h2>
+<div class="resource-grid">
+<div class="resource-card">
+<p><strong>Google Cartographer</strong><br>
+website:<br>
+<a href="https://google-cartographer-ros.readthedocs.io/en/latest/">website</a></p>
+</div>
+<div class="resource-card">
+<p><strong>2D LiDAR SLAM</strong><br>
+paper:<br>
+<a href="https://static.googleusercontent.com/media/research.google.com/zh-CN//pubs/archive/45466.pdf">paper</a></p>
+</div>
+<div class="resource-card">
+<p><strong>A Algorithm</strong><br>
+<a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0263841">paper</a></p>
+</div>
+<div class="resource-card">
+<p><strong>Artificial Potential Fields</strong><br>
+<a href="https://pure.tue.nl/ws/portalfiles/portal/360154334/1312049_ControlForUnderactuatedVehiclesWithStateConstraintsUsingArtificialPotentialFields.pdf">paper</a></p>
+</div>
+<div class="resource-card">
+<p><strong>Proximal Policy Optimization</strong><br>
+<a href="https://arxiv.org/abs/1707.06347">paper</a></p>
+</div>
+</div>
+</section>
 <section id="project-resources" class="level2 section-title section-container">
 <h2 class="section-title anchored" data-anchor-id="project-resources">Project Resources</h2>
 <div class="resource-grid">
@@ -448,13 +614,11 @@ Race images, trajectory plots, lap-time tables, ROS graph snapshots, and annotat
 </section>
 <section id="bibtex" class="level2 section-title section-container">
 <h2 class="section-title anchored" data-anchor-id="bibtex">BibTeX</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="va">@misc</span>{<span class="ot">invincibleproj</span>,</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">title</span>        = {invincible<span class="ch">\_</span>proj: Autonomous F1TENTH Time Trial Racing},</span>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="va">@article</span>{<span class="ot">invincibleproj</span>,</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">title</span>        = {invincible_proj: Autonomous F1TENTH Time Trial Racing},</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">author</span>       = {Zhenyu Zhang and Yuanzhe Wang and Murphy Huang},</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">year</span>         = {2026},</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">note</span>         = {ECE 484 final project website},</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">howpublished</span> = {GitHub Pages project site}</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <div class="site-footer">
 <p>This website is built with Quarto for an F1TENTH autonomous racing project page.</p>

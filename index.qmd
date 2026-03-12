@@ -1,5 +1,5 @@
 ---
-pagetitle: "invincible_proj | F1TENTH Time Trial"
+pagetitle: "Group Invincible | F1TENTH Time Trial"
 format:
   html:
     toc: false
@@ -12,7 +12,7 @@ format:
 ECE 484 Final Project · F1TENTH Time Trial
 :::
 
-# invincible_proj: Autonomous F1TENTH Time Trial Racing {.title}
+# Group Invincible: F1TENTH Time Trial{.title}
 
 ::: {.subtitle}
 Designing a fast, reliable, and competition-ready autonomous race car on a stock F1TENTH platform using onboard sensing, perception, planning, and control.
@@ -25,7 +25,7 @@ Designing a fast, reliable, and competition-ready autonomous race car on a stock
 :::
 
 ::: {.affiliation-list}
-^1^University of Illinois Urbana-Champaign · ECE 484 Autonomous Vehicles
+^1^University of Illinois Urbana-Champaign · ECE 484 · Spring 2026
 :::
 
 ::: {.button-row}
@@ -79,7 +79,7 @@ Designing a fast, reliable, and competition-ready autonomous race car on a stock
 ## Overview {.section-title}
 
 ::: {.abstract-text}
-We approach the problem as a full autonomy stack. The vehicle uses onboard sensing to understand the nearby environment, converts that information into a track-relative driving objective, and then executes that objective through steering and speed control. Depending on the final system design, this can include LiDAR-based free-space reasoning, camera-based track understanding, IMU-assisted stabilization, or a hybrid fusion strategy. The final website is structured to show not only the racing result, but also the engineering decisions behind the result: sensing, planning, control logic, evaluation strategy, and lessons learned from real-car testing.
+We approach the problem as a full autonomy stack. The vehicle uses onboard sensing to understand the nearby environment, converts that information into a track-relative driving objective, and then executes that objective through steering and speed control. The final system design will implement a hybrid strategy with LiDAR and IMU feedback. The final website is structured to show not only the racing result, but also the engineering decisions behind the result: sensing, planning, control logic, evaluation strategy, and lessons learned from real-car testing.
 :::
 
 :::
@@ -149,7 +149,7 @@ For navigation, we implement the A* Algorithm to compute the optimal path throug
 :::
 
 ::: {.flowchart-wrap}
-![System flowchart for the F1TENTH autonomous driving pipeline.](flowchart.svg){width="72%"}
+![System flowchart for the F1TENTH autonomous driving pipeline.](block_diagram.png){width="72%"}
 :::
 
 
@@ -213,17 +213,6 @@ Base setup for the simulator
 
 
 
-::: {#future .section-container}
-
-## Future Improvements {.section-title}
-
-::: {.content-text}
-Later working on the algorithm.
-:::
-
-:::
-
-
 
 ::: {#sensors-inputs .section-container}
 
@@ -270,11 +259,19 @@ Later working on the algorithm.
 
 :::
 
+::: {#future .section-container}
 
+## Future Improvements {.section-title}
+
+::: {.content-text}
+Later work on the algorithm.
+:::
+
+:::
 
 ::: {.section-container}
 
-## Papers/websites {.section-title}
+## Related Works {.section-title}
 
 ::: {.resource-grid}
 ::: {.resource-card}
