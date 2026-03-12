@@ -340,13 +340,12 @@ Race images, trajectory plots, lap-time tables, ROS graph snapshots, and annotat
 ## BibTeX {.section-title}
 
 ```bibtex
-@misc{invincibleproj,
-  title        = {invincible\_proj: Autonomous F1TENTH Time Trial Racing},
+@article{invincibleproj,
+  title        = {invincible_proj: Autonomous F1TENTH Time Trial Racing},
   author       = {Zhenyu Zhang and Yuanzhe Wang and Murphy Huang},
   year         = {2026},
-  note         = {ECE 484 final project website},
-  howpublished = {GitHub Pages project site}
 }
+```
 :::
 
 ::: {.site-footer}
