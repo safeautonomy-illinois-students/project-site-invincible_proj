@@ -223,6 +223,93 @@ Later working on the algorithm.
 
 :::
 
+
+
+::: {#sensors-inputs .section-container}
+
+## Sensors and Inputs {.section-title}
+
+::: {.content-text}
+
+| Part | Uses What Data | Sends What Next |
+|---|---|---|
+| LiDAR | Distance and obstacle measurements | Range data to perception |
+| Camera | Track images and visual information | Image data to perception |
+| IMU | Motion and orientation data | State data to estimation / control |
+| Perception | LiDAR + camera data | Free-space and track understanding to planning |
+| State Estimation | IMU data | Vehicle pose / heading to planning and control |
+| Planning | Perception + state information | Target path or waypoint to control |
+| Control | Planned target + current vehicle state | Steering and speed commands to the car |
+| Vehicle | Drive commands | New movement and new sensor data |
+
+:::
+:::
+
+
+
+::: {.section-container}
+
+## Plan {.section-title}
+
+::: {.content-text}
+
+| Step | Main Task | Goal / Output |
+|---|---|---|
+| Step 1 | Set up the F1TENTH platform and software environment | Make sure the car, ROS, and sensor drivers run correctly |
+| Step 2 | Collect and verify sensor data | Confirm LiDAR, camera, and IMU data can be read reliably |
+| Step 3 | Build the perception module | Detect walls, free space, and useful track features |
+| Step 4 | Add state estimation | Estimate vehicle heading, motion, and current state |
+| Step 5 | Develop the planning module | Choose a safe and efficient path or target waypoint |
+| Step 6 | Design the control module | Convert the planned path into steering and speed commands |
+| Step 7 | Integrate all modules together | Make sensing, planning, and control run as one full pipeline |
+| Step 8 | Test in simulation | Debug the system and tune parameters safely |
+| Step 9 | Test on the real car | Verify stable driving on the actual F1TENTH vehicle |
+| Step 10 | Improve performance | Reduce lap time, improve smoothness, and increase stability |
+| Step 11 | Final evaluation and demo | Record results, compare runs, and prepare the final presentation |
+:::
+
+:::
+
+
+
+::: {.section-container}
+
+## Papers/websites {.section-title}
+
+::: {.resource-grid}
+::: {.resource-card}
+**Google Cartographer**  
+website:  
+[website](https://google-cartographer-ros.readthedocs.io/en/latest/)
+:::
+
+::: {.resource-card}
+**2D LiDAR SLAM**  
+paper:  
+[paper](https://static.googleusercontent.com/media/research.google.com/zh-CN//pubs/archive/45466.pdf)
+:::
+
+::: {.resource-card}
+**A Algorithm**  
+[paper](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0263841)
+:::
+
+::: {.resource-card}
+**Artificial Potential Fields**  
+[paper](https://pure.tue.nl/ws/portalfiles/portal/360154334/1312049_ControlForUnderactuatedVehiclesWithStateConstraintsUsingArtificialPotentialFields.pdf)
+:::
+
+::: {.resource-card}
+**Proximal Policy Optimization**  
+[paper](https://arxiv.org/abs/1707.06347)
+:::
+:::
+
+:::
+
+
+
+
 ::: {.section-container}
 
 ## Project Resources {.section-title}
@@ -253,12 +340,10 @@ Race images, trajectory plots, lap-time tables, ROS graph snapshots, and annotat
 ## BibTeX {.section-title}
 
 ```bibtex
-@misc{invincibleproj,
-  title        = {invincible\_proj: Autonomous F1TENTH Time Trial Racing},
+@article{invincibleproj,
+  title        = {invincible_proj: Autonomous F1TENTH Time Trial Racing},
   author       = {Zhenyu Zhang and Yuanzhe Wang and Murphy Huang},
   year         = {2026},
-  note         = {ECE 484 final project website},
-  howpublished = {GitHub Pages project site}
 }
 ```
 
