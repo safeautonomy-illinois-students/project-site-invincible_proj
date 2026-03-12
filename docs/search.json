@@ -25,7 +25,21 @@
     "href": "index.html#system-pipeline",
     "title": "Group Invincible: F1TENTH Time Trial",
     "section": "System Pipeline",
-    "text": "System Pipeline\n\n\n\n\n\n\n01\n\n\nSensing\n\n\n\n\n\n\n02\n\n\nTrack Understanding\n\n\n\n\n\n\n03\n\n\nPlanning\n\n\n\n\n\n\n04\n\n\nControl\n\n\n\n\n\n\n\n\n\nSystem flowchart for the F1TENTH autonomous driving pipeline."
+    "text": "System Pipeline\n\n\n\n\n\n\n01\n\n\nSensing\n\n\n\n\n\n\n02\n\n\nTrack Understanding\n\n\n\n\n\n\n03\n\n\nPlanning\n\n\n\n\n\n\n04\n\n\nControl\n\n\n\n\n\n\n\n\n\nSystem flowchart for the F1TENTH autonomous driving pipeline.\n\n\n\n\n\n\nROS node architecture of the F1TENTH autonomous driving pipeline."
+  },
+  {
+    "objectID": "index.html#sensors-and-inputs",
+    "href": "index.html#sensors-and-inputs",
+    "title": "Group Invincible: F1TENTH Time Trial",
+    "section": "Sensors and Inputs",
+    "text": "Sensors and Inputs\n\n\n\n\nSource\nTopic / Data\nUse\n\n\n\n\nLiDAR\n/scan\nBoundary and obstacle sensing\n\n\nIMU\n/imu\nMotion and orientation feedback\n\n\nOdometry\n/odom\nVelocity and motion estimate\n\n\nGoal pose\n/goal_pose\nPlanner target\n\n\nMap\n/map\nFree-space representation\n\n\nVehicle pose\n/vehicle_pose\nCurrent state estimate\n\n\nGlobal path\n/global_path\nA* planning output\n\n\nSmoothed path\n/smoothed_path\nLateral control reference\n\n\nTarget speed\n/target_speed\nLongitudinal control reference\n\n\nDrive command\n/drive\nVehicle actuation command"
+  },
+  {
+    "objectID": "index.html#plan",
+    "href": "index.html#plan",
+    "title": "Group Invincible: F1TENTH Time Trial",
+    "section": "Plan",
+    "text": "Plan\n\n\n\n\n\n\n\n\n\nStep\nMain Task\nGoal / Output\n\n\n\n\nStep 1\nSet up the F1TENTH platform and ROS workspace\nConfirm the vehicle, onboard computer, ROS packages, and dependencies build and run correctly\n\n\nStep 2\nBring up LiDAR, IMU, and odometry drivers\nPublish stable /scan, /imu, and /odom topics with valid data\n\n\nStep 3\nRun and tune Google Cartographer\nGenerate a consistent occupancy grid map and real-time vehicle pose estimate\n\n\nStep 4\nValidate localization and map quality\nCheck map consistency, pose accuracy, and repeatability on the track\n\n\nStep 5\nImplement the A* global planner\nCompute a collision-free global path from the current pose to the target waypoint\n\n\nStep 6\nAdd path smoothing and trajectory generation\nConvert the raw planner output into a smooth, drivable reference path\n\n\nStep 7\nAdd curvature-based speed planning\nGenerate a speed profile that slows in turns and increases on straights\n\n\nStep 8\nImplement Stanley lateral control\nCompute steering commands from cross-track and heading error\n\n\nStep 9\nImplement PID longitudinal speed control\nTrack the target speed using throttle or drive commands\n\n\nStep 10\nIntegrate steering and speed into Ackermann drive commands\nPublish closed-loop control commands compatible with the F1TENTH platform\n\n\nStep 11\nTest and tune in simulation\nDebug interfaces, verify closed-loop behavior, and tune controller parameters safely\n\n\nStep 12\nTest on the real vehicle\nVerify stable autonomous driving on the physical F1TENTH car\n\n\nStep 13\nImprove lap performance and robustness\nReduce lap time, improve smoothness, and increase stability across repeated runs\n\n\nStep 14\nFinal evaluation and demo preparation\nRecord results, compare runs, and prepare the final presentation and website summary"
   },
   {
     "objectID": "index.html#demo-video",
@@ -40,20 +54,6 @@
     "title": "Group Invincible: F1TENTH Time Trial",
     "section": "Results & Evaluation",
     "text": "Results & Evaluation\n\n\n\nBest Lap Time\n\n\nTBD\n\n\n\n\n\n\n\nCompletion Rate\n\n\nTBD\n\n\n\n\n\n\n\nController Smoothness\n\n\nTBD\n\n\n\n\n\n\n\nTop Reliable Speed\n\n\nTBD"
-  },
-  {
-    "objectID": "index.html#sensors-and-inputs",
-    "href": "index.html#sensors-and-inputs",
-    "title": "Group Invincible: F1TENTH Time Trial",
-    "section": "Sensors and Inputs",
-    "text": "Sensors and Inputs\n\n\n\n\n\n\n\n\n\nPart\nUses What Data\nSends What Next\n\n\n\n\nLiDAR\nDistance and obstacle measurements\nRange data to perception\n\n\nCamera\nTrack images and visual information\nImage data to perception\n\n\nIMU\nMotion and orientation data\nState data to estimation / control\n\n\nPerception\nLiDAR + camera data\nFree-space and track understanding to planning\n\n\nState Estimation\nIMU data\nVehicle pose / heading to planning and control\n\n\nPlanning\nPerception + state information\nTarget path or waypoint to control\n\n\nControl\nPlanned target + current vehicle state\nSteering and speed commands to the car\n\n\nVehicle\nDrive commands\nNew movement and new sensor data"
-  },
-  {
-    "objectID": "index.html#plan",
-    "href": "index.html#plan",
-    "title": "Group Invincible: F1TENTH Time Trial",
-    "section": "Plan",
-    "text": "Plan\n\n\n\n\n\n\n\n\n\nStep\nMain Task\nGoal / Output\n\n\n\n\nStep 1\nSet up the F1TENTH platform and software environment\nMake sure the car, ROS, and sensor drivers run correctly\n\n\nStep 2\nCollect and verify sensor data\nConfirm LiDAR, camera, and IMU data can be read reliably\n\n\nStep 3\nBuild the perception module\nDetect walls, free space, and useful track features\n\n\nStep 4\nAdd state estimation\nEstimate vehicle heading, motion, and current state\n\n\nStep 5\nDevelop the planning module\nChoose a safe and efficient path or target waypoint\n\n\nStep 6\nDesign the control module\nConvert the planned path into steering and speed commands\n\n\nStep 7\nIntegrate all modules together\nMake sensing, planning, and control run as one full pipeline\n\n\nStep 8\nTest in simulation\nDebug the system and tune parameters safely\n\n\nStep 9\nTest on the real car\nVerify stable driving on the actual F1TENTH vehicle\n\n\nStep 10\nImprove performance\nReduce lap time, improve smoothness, and increase stability\n\n\nStep 11\nFinal evaluation and demo\nRecord results, compare runs, and prepare the final presentation"
   },
   {
     "objectID": "index.html#future-improvements",

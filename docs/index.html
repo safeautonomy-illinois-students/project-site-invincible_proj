@@ -347,11 +347,176 @@ Control
 </figure>
 </div>
 </div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="f1tenth_ros_architecture.svg" class="img-fluid figure-img" style="width:92.0%"></p>
+<figcaption>ROS node architecture of the F1TENTH autonomous driving pipeline.</figcaption>
+</figure>
+</div>
 <div class="content-text">
 
 </div>
 </section>
 </div>
+<div id="sensors-inputs" class="section-container">
+<section id="sensors-and-inputs" class="level2 section-title">
+<h2 class="section-title anchored" data-anchor-id="sensors-and-inputs">Sensors and Inputs</h2>
+<div class="content-text">
+<table class="table">
+<thead>
+<tr class="header">
+<th>Source</th>
+<th>Topic / Data</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>LiDAR</td>
+<td><code>/scan</code></td>
+<td>Boundary and obstacle sensing</td>
+</tr>
+<tr class="even">
+<td>IMU</td>
+<td><code>/imu</code></td>
+<td>Motion and orientation feedback</td>
+</tr>
+<tr class="odd">
+<td>Odometry</td>
+<td><code>/odom</code></td>
+<td>Velocity and motion estimate</td>
+</tr>
+<tr class="even">
+<td>Goal pose</td>
+<td><code>/goal_pose</code></td>
+<td>Planner target</td>
+</tr>
+<tr class="odd">
+<td>Map</td>
+<td><code>/map</code></td>
+<td>Free-space representation</td>
+</tr>
+<tr class="even">
+<td>Vehicle pose</td>
+<td><code>/vehicle_pose</code></td>
+<td>Current state estimate</td>
+</tr>
+<tr class="odd">
+<td>Global path</td>
+<td><code>/global_path</code></td>
+<td>A* planning output</td>
+</tr>
+<tr class="even">
+<td>Smoothed path</td>
+<td><code>/smoothed_path</code></td>
+<td>Lateral control reference</td>
+</tr>
+<tr class="odd">
+<td>Target speed</td>
+<td><code>/target_speed</code></td>
+<td>Longitudinal control reference</td>
+</tr>
+<tr class="even">
+<td>Drive command</td>
+<td><code>/drive</code></td>
+<td>Vehicle actuation command</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</div>
+<section id="plan" class="level2 section-title section-container">
+<h2 class="section-title anchored" data-anchor-id="plan">Plan</h2>
+<div class="content-text">
+<table class="table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Step</th>
+<th>Main Task</th>
+<th>Goal / Output</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Step 1</td>
+<td>Set up the F1TENTH platform and ROS workspace</td>
+<td>Confirm the vehicle, onboard computer, ROS packages, and dependencies build and run correctly</td>
+</tr>
+<tr class="even">
+<td>Step 2</td>
+<td>Bring up LiDAR, IMU, and odometry drivers</td>
+<td>Publish stable <code>/scan</code>, <code>/imu</code>, and <code>/odom</code> topics with valid data</td>
+</tr>
+<tr class="odd">
+<td>Step 3</td>
+<td>Run and tune Google Cartographer</td>
+<td>Generate a consistent occupancy grid map and real-time vehicle pose estimate</td>
+</tr>
+<tr class="even">
+<td>Step 4</td>
+<td>Validate localization and map quality</td>
+<td>Check map consistency, pose accuracy, and repeatability on the track</td>
+</tr>
+<tr class="odd">
+<td>Step 5</td>
+<td>Implement the A* global planner</td>
+<td>Compute a collision-free global path from the current pose to the target waypoint</td>
+</tr>
+<tr class="even">
+<td>Step 6</td>
+<td>Add path smoothing and trajectory generation</td>
+<td>Convert the raw planner output into a smooth, drivable reference path</td>
+</tr>
+<tr class="odd">
+<td>Step 7</td>
+<td>Add curvature-based speed planning</td>
+<td>Generate a speed profile that slows in turns and increases on straights</td>
+</tr>
+<tr class="even">
+<td>Step 8</td>
+<td>Implement Stanley lateral control</td>
+<td>Compute steering commands from cross-track and heading error</td>
+</tr>
+<tr class="odd">
+<td>Step 9</td>
+<td>Implement PID longitudinal speed control</td>
+<td>Track the target speed using throttle or drive commands</td>
+</tr>
+<tr class="even">
+<td>Step 10</td>
+<td>Integrate steering and speed into Ackermann drive commands</td>
+<td>Publish closed-loop control commands compatible with the F1TENTH platform</td>
+</tr>
+<tr class="odd">
+<td>Step 11</td>
+<td>Test and tune in simulation</td>
+<td>Debug interfaces, verify closed-loop behavior, and tune controller parameters safely</td>
+</tr>
+<tr class="even">
+<td>Step 12</td>
+<td>Test on the real vehicle</td>
+<td>Verify stable autonomous driving on the physical F1TENTH car</td>
+</tr>
+<tr class="odd">
+<td>Step 13</td>
+<td>Improve lap performance and robustness</td>
+<td>Reduce lap time, improve smoothness, and increase stability across repeated runs</td>
+</tr>
+<tr class="even">
+<td>Step 14</td>
+<td>Final evaluation and demo preparation</td>
+<td>Record results, compare runs, and prepare the final presentation and website summary</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
 <div class="section-band section-band-dark">
 <div id="demo" class="section-container">
 <section id="demo-video" class="level2 section-title section-title-light">
@@ -419,145 +584,6 @@ TBD
 </div>
 </section>
 </div>
-<div id="sensors-inputs" class="section-container">
-<section id="sensors-and-inputs" class="level2 section-title">
-<h2 class="section-title anchored" data-anchor-id="sensors-and-inputs">Sensors and Inputs</h2>
-<div class="content-text">
-<table class="table">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Part</th>
-<th>Uses What Data</th>
-<th>Sends What Next</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>LiDAR</td>
-<td>Distance and obstacle measurements</td>
-<td>Range data to perception</td>
-</tr>
-<tr class="even">
-<td>Camera</td>
-<td>Track images and visual information</td>
-<td>Image data to perception</td>
-</tr>
-<tr class="odd">
-<td>IMU</td>
-<td>Motion and orientation data</td>
-<td>State data to estimation / control</td>
-</tr>
-<tr class="even">
-<td>Perception</td>
-<td>LiDAR + camera data</td>
-<td>Free-space and track understanding to planning</td>
-</tr>
-<tr class="odd">
-<td>State Estimation</td>
-<td>IMU data</td>
-<td>Vehicle pose / heading to planning and control</td>
-</tr>
-<tr class="even">
-<td>Planning</td>
-<td>Perception + state information</td>
-<td>Target path or waypoint to control</td>
-</tr>
-<tr class="odd">
-<td>Control</td>
-<td>Planned target + current vehicle state</td>
-<td>Steering and speed commands to the car</td>
-</tr>
-<tr class="even">
-<td>Vehicle</td>
-<td>Drive commands</td>
-<td>New movement and new sensor data</td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
-</div>
-<section id="plan" class="level2 section-title section-container">
-<h2 class="section-title anchored" data-anchor-id="plan">Plan</h2>
-<div class="content-text">
-<table class="table">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Step</th>
-<th>Main Task</th>
-<th>Goal / Output</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Step 1</td>
-<td>Set up the F1TENTH platform and software environment</td>
-<td>Make sure the car, ROS, and sensor drivers run correctly</td>
-</tr>
-<tr class="even">
-<td>Step 2</td>
-<td>Collect and verify sensor data</td>
-<td>Confirm LiDAR, camera, and IMU data can be read reliably</td>
-</tr>
-<tr class="odd">
-<td>Step 3</td>
-<td>Build the perception module</td>
-<td>Detect walls, free space, and useful track features</td>
-</tr>
-<tr class="even">
-<td>Step 4</td>
-<td>Add state estimation</td>
-<td>Estimate vehicle heading, motion, and current state</td>
-</tr>
-<tr class="odd">
-<td>Step 5</td>
-<td>Develop the planning module</td>
-<td>Choose a safe and efficient path or target waypoint</td>
-</tr>
-<tr class="even">
-<td>Step 6</td>
-<td>Design the control module</td>
-<td>Convert the planned path into steering and speed commands</td>
-</tr>
-<tr class="odd">
-<td>Step 7</td>
-<td>Integrate all modules together</td>
-<td>Make sensing, planning, and control run as one full pipeline</td>
-</tr>
-<tr class="even">
-<td>Step 8</td>
-<td>Test in simulation</td>
-<td>Debug the system and tune parameters safely</td>
-</tr>
-<tr class="odd">
-<td>Step 9</td>
-<td>Test on the real car</td>
-<td>Verify stable driving on the actual F1TENTH vehicle</td>
-</tr>
-<tr class="even">
-<td>Step 10</td>
-<td>Improve performance</td>
-<td>Reduce lap time, improve smoothness, and increase stability</td>
-</tr>
-<tr class="odd">
-<td>Step 11</td>
-<td>Final evaluation and demo</td>
-<td>Record results, compare runs, and prepare the final presentation</td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
 <div id="future" class="section-container">
 <section id="future-improvements" class="level2 section-title">
 <h2 class="section-title anchored" data-anchor-id="future-improvements">Future Improvements</h2>

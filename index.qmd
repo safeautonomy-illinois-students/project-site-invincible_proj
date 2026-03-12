@@ -153,11 +153,71 @@ For navigation, we implement the A* Algorithm to compute the optimal path throug
 :::
 
 
+
+![ROS node architecture of the F1TENTH autonomous driving pipeline.](f1tenth_ros_architecture.svg){width="92%"}
+
 ::: {.content-text}
 
 :::
 
 :::
+
+
+
+
+::: {#sensors-inputs .section-container}
+
+## Sensors and Inputs {.section-title}
+
+::: {.content-text}
+
+
+
+
+| Source | Topic / Data | Use |
+|---|---|---|
+| LiDAR | `/scan` | Boundary and obstacle sensing |
+| IMU | `/imu` | Motion and orientation feedback |
+| Odometry | `/odom` | Velocity and motion estimate |
+| Goal pose | `/goal_pose` | Planner target |
+| Map | `/map` | Free-space representation |
+| Vehicle pose | `/vehicle_pose` | Current state estimate |
+| Global path | `/global_path` | A* planning output |
+| Smoothed path | `/smoothed_path` | Lateral control reference |
+| Target speed | `/target_speed` | Longitudinal control reference |
+| Drive command | `/drive` | Vehicle actuation command |
+
+:::
+:::
+
+
+
+::: {.section-container}
+
+## Plan {.section-title}
+
+::: {.content-text}
+
+| Step | Main Task | Goal / Output |
+|---|---|---|
+| Step 1 | Set up the F1TENTH platform and ROS workspace | Confirm the vehicle, onboard computer, ROS packages, and dependencies build and run correctly |
+| Step 2 | Bring up LiDAR, IMU, and odometry drivers | Publish stable `/scan`, `/imu`, and `/odom` topics with valid data |
+| Step 3 | Run and tune Google Cartographer | Generate a consistent occupancy grid map and real-time vehicle pose estimate |
+| Step 4 | Validate localization and map quality | Check map consistency, pose accuracy, and repeatability on the track |
+| Step 5 | Implement the A* global planner | Compute a collision-free global path from the current pose to the target waypoint |
+| Step 6 | Add path smoothing and trajectory generation | Convert the raw planner output into a smooth, drivable reference path |
+| Step 7 | Add curvature-based speed planning | Generate a speed profile that slows in turns and increases on straights |
+| Step 8 | Implement Stanley lateral control | Compute steering commands from cross-track and heading error |
+| Step 9 | Implement PID longitudinal speed control | Track the target speed using throttle or drive commands |
+| Step 10 | Integrate steering and speed into Ackermann drive commands | Publish closed-loop control commands compatible with the F1TENTH platform |
+| Step 11 | Test and tune in simulation | Debug interfaces, verify closed-loop behavior, and tune controller parameters safely |
+| Step 12 | Test on the real vehicle | Verify stable autonomous driving on the physical F1TENTH car |
+| Step 13 | Improve lap performance and robustness | Reduce lap time, improve smoothness, and increase stability across repeated runs |
+| Step 14 | Final evaluation and demo preparation | Record results, compare runs, and prepare the final presentation and website summary |
+:::
+
+:::
+
 
 ::: {.section-band .section-band-dark}
 ::: {#demo .section-container}
@@ -174,6 +234,7 @@ Base setup for the simulator
 
 :::
 :::
+
 
 ::: {#results .section-container}
 
@@ -213,51 +274,6 @@ Base setup for the simulator
 
 
 
-
-::: {#sensors-inputs .section-container}
-
-## Sensors and Inputs {.section-title}
-
-::: {.content-text}
-
-| Part | Uses What Data | Sends What Next |
-|---|---|---|
-| LiDAR | Distance and obstacle measurements | Range data to perception |
-| Camera | Track images and visual information | Image data to perception |
-| IMU | Motion and orientation data | State data to estimation / control |
-| Perception | LiDAR + camera data | Free-space and track understanding to planning |
-| State Estimation | IMU data | Vehicle pose / heading to planning and control |
-| Planning | Perception + state information | Target path or waypoint to control |
-| Control | Planned target + current vehicle state | Steering and speed commands to the car |
-| Vehicle | Drive commands | New movement and new sensor data |
-
-:::
-:::
-
-
-
-::: {.section-container}
-
-## Plan {.section-title}
-
-::: {.content-text}
-
-| Step | Main Task | Goal / Output |
-|---|---|---|
-| Step 1 | Set up the F1TENTH platform and software environment | Make sure the car, ROS, and sensor drivers run correctly |
-| Step 2 | Collect and verify sensor data | Confirm LiDAR, camera, and IMU data can be read reliably |
-| Step 3 | Build the perception module | Detect walls, free space, and useful track features |
-| Step 4 | Add state estimation | Estimate vehicle heading, motion, and current state |
-| Step 5 | Develop the planning module | Choose a safe and efficient path or target waypoint |
-| Step 6 | Design the control module | Convert the planned path into steering and speed commands |
-| Step 7 | Integrate all modules together | Make sensing, planning, and control run as one full pipeline |
-| Step 8 | Test in simulation | Debug the system and tune parameters safely |
-| Step 9 | Test on the real car | Verify stable driving on the actual F1TENTH vehicle |
-| Step 10 | Improve performance | Reduce lap time, improve smoothness, and increase stability |
-| Step 11 | Final evaluation and demo | Record results, compare runs, and prepare the final presentation |
-:::
-
-:::
 
 ::: {#future .section-container}
 
