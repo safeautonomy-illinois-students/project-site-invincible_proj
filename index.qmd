@@ -235,34 +235,71 @@ Reactive gap controller navigating the F1TENTH simulator track — base simulati
 
 ## Results & Evaluation {.section-title}
 
-::: {.metrics-grid}
-::: {.metric-card}
-<div class="metric-label">Best Lap Time</div>
-<div class="metric-value">TBD</div>
-<div class="metric-note"> </div>
+::: {.content-text}
+Both approaches completed a full lap in simulation with no wall contact and 100% track coverage. The key trade-off is lap time versus planning overhead: A* + Stanley posts a faster raw lap but requires over a minute of pre-run planning; the reactive controller is slower on track but starts instantly with no map or goal setup.
 :::
 
-::: {.metric-card}
-<div class="metric-label">Completion Rate</div>
-<div class="metric-value">TBD</div>
-<div class="metric-note"> </div>
+::: {.comparison-table-wrap}
+
+| Metric | Reactive Gap Following | A\* + Stanley |
+|---|---|---|
+| Lap time | 64 s | 58 s |
+| Planning / thinking time | 0 s (reactive, no map) | 62 s (A\* search + smoothing) |
+| Wall contact | None | None |
+| Track completion | 100% | 100% |
+
 :::
 
-::: {.metric-card}
-<div class="metric-label">Controller Smoothness</div>
-<div class="metric-value">TBD</div>
-<div class="metric-note"> </div>
+---
+
+### A\* + Stanley Controller — Run Analysis
+
+::: {.content-text}
+The plot below is extracted from a rosbag recording of the A* + Stanley pipeline executing a single planned path segment in simulation.
 :::
 
-::: {.metric-card}
-<div class="metric-label">Top Reliable Speed</div>
-<div class="metric-value">TBD</div>
-<div class="metric-note"> </div>
-:::
+::: {.flowchart-wrap}
+![](<ROSBAG data for A.png>){width="88%"}
 :::
 
 ::: {.content-text}
-Final performance numbers will be recorded from the competition run. Evaluation criteria include lap time, track completion rate, steering smoothness (measured as RMS steering angle change per cycle), and the highest speed at which the car completed the full track without faults.
+**Left — Trajectory (color = speed):** The A* planner computed a smooth curved path from the start pose (red circle, origin) to the goal pose (blue triangle, ~3.5 m ahead). The Stanley controller tracked it with no visible deviation — the trajectory trace is a clean single line throughout. Speed is color-coded: the car starts from rest (dark purple), accelerates through the curve, and reaches a cruise speed of ~1.0–1.1 m/s (yellow-green) by the midpoint of the path.
+
+**Right — Speed Profile:** Speed is plotted against rosbag message index. The car ramps up sharply to ~1.0 m/s within the first ~50 messages, holds a steady cruise for approximately 200 messages while tracking the path, then drops to zero when the Stanley controller detects arrival at the final waypoint. The remaining ~1500 messages record the car at rest after goal completion. The clean ramp-and-hold profile confirms that the lookahead-based speed control produces smooth, predictable longitudinal behavior with no overshoot.
+:::
+
+---
+
+### Reactive Gap Following — Run Analysis
+
+::: {.content-text}
+The following plots are recorded from a single simulation lap (run `20260419_131930`).
+:::
+
+::: {.challenge-grid}
+::: {.challenge-card}
+![](run_20260419_131930_trajectory.png)
+
+**Trajectory Trace** — The car's path is color-coded by speed. Yellow and green segments (5–5.5+ m/s) dominate the straights, while blue and purple sections (2.5–3.5 m/s) appear at all major corners. The tight, consistent trace shows the reactive controller produces a repeatable path that naturally hugs the racing line without any explicit path planning.
+:::
+
+::: {.challenge-card}
+![](run_20260419_131930_velocity.png)
+
+**Velocity vs Time** — Commanded and actual speed track each other almost perfectly throughout the 64-second run. The car holds ~5.5 m/s on straights and dips to 2–3 m/s at five to six corners, matching the speed-scheduling formula that reduces speed with steering angle and target gap angle. The tight commanded-vs-actual overlap confirms the low-level drive interface follows commands faithfully.
+:::
+
+::: {.challenge-card}
+![](run_20260419_131930_clearance_ttc.png)
+
+**Front Clearance and TTC vs Time** — Front clearance (left axis) oscillates between 2 and 5 m throughout the run, reflecting the gap controller actively seeking open space. The TTC (right axis) remains consistently low but never drops below the emergency threshold — the controller never triggered a hard stop. This confirms that the disparity extension and dynamic bubble margins provided sufficient obstacle safety throughout.
+:::
+
+::: {.challenge-card}
+![](run_20260419_131930_acceleration.png)
+
+**Acceleration vs Time** — The reactive controller produces high-frequency acceleration changes, with peak magnitudes within ±10 m/s². This is characteristic of a scan-driven reactive approach: speed is recomputed every LiDAR scan and responds immediately to changing gap geometry. The bursts of high deceleration correspond to the corner entry events visible in the velocity plot.
+:::
 :::
 
 :::
@@ -290,33 +327,21 @@ With both simulation pipelines validated and the reactive controller running on 
 
 ::: {.resource-grid}
 ::: {.resource-card}
-**Google Cartographer**
-Real-time SLAM for 2D occupancy grid mapping:
-[Documentation](https://google-cartographer-ros.readthedocs.io/en/latest/)
+**Follow the Gap Method**
+Sezer, V., & Gokasan, M. (2012). A novel obstacle avoidance algorithm: "Follow the Gap Method". *Robotics and Autonomous Systems*, 60(9), 1123–1134.
+[Paper](https://www.sciencedirect.com/science/article/pii/S0921889012000838)
 :::
 
 ::: {.resource-card}
-**2D LiDAR SLAM**
-Hess et al. — Real-Time Loop Closure in 2D LIDAR SLAM:
-[Paper](https://static.googleusercontent.com/media/research.google.com/zh-CN//pubs/archive/45466.pdf)
+**F1TENTH Platform**
+O'Kelly, M., Zheng, H., Karthik, D., & Mangharam, R. (2020). F1TENTH: An Open-source Evaluation Environment for Continuous Control and Reinforcement Learning. *Proceedings of Machine Learning Research*, 123, 77–89.
+[Paper](https://proceedings.mlr.press/v123/o-kelly20a.html)
 :::
 
 ::: {.resource-card}
-**A\* Algorithm**
-Optimal heuristic search for grid-based path planning:
-[Paper](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0263841)
-:::
-
-::: {.resource-card}
-**Artificial Potential Fields**
-Reactive navigation via attractive and repulsive force fields:
-[Paper](https://pure.tue.nl/ws/portalfiles/portal/360154334/1312049_ControlForUnderactuatedVehiclesWithStateConstraintsUsingArtificialPotentialFields.pdf)
-:::
-
-::: {.resource-card}
-**Proximal Policy Optimization**
-Schulman et al. — RL policy gradient method for autonomous control:
-[Paper](https://arxiv.org/abs/1707.06347)
+**F1TENTH Racing Survey**
+Betz, J. et al. (2024). Unifying F1TENTH Autonomous Racing: Survey, Methods and Benchmarks.
+[Paper](https://arxiv.org/abs/2402.18558)
 :::
 :::
 
