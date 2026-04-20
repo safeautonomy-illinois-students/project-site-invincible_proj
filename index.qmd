@@ -218,14 +218,62 @@ For hardware deployment we chose the reactive gap controller — it requires no 
 ::: {.section-band .section-band-dark}
 ::: {#demo .section-container}
 
-## Demo Video {.section-title .section-title-light}
-
-::: {.video-container .video-frame}
-{{< video https://youtu.be/AghdeVoMORM >}}
-:::
+## Demo Videos {.section-title .section-title-light}
 
 ::: {.content-text .content-text-light}
-Reactive gap controller navigating the F1TENTH simulator track — base simulation setup.
+Simulation and real-car recordings of the Reactive Gap Following controller.
+:::
+
+<div style="margin-top:1.5rem;">
+<p style="font-size:0.82rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:#00b7ff;margin-bottom:0.8rem;">Simulation</p>
+</div>
+
+::: {.challenge-grid}
+::: {.challenge-card}
+**Short Run**
+
+::: {.video-container}
+{{< video https://youtu.be/OyY7nvF_2yk >}}
+:::
+
+Reactive gap controller navigating a short track segment in the F1TENTH simulator, showing the gap selection and obstacle avoidance behavior at close range.
+:::
+
+::: {.challenge-card}
+**Long Run**
+
+::: {.video-container}
+{{< video https://youtu.be/4Nvf8pd5VIA >}}
+:::
+
+Full-length simulation run demonstrating consistent gap-following throughout a complete track lap, including straight-line speed and corner braking.
+:::
+:::
+
+<div style="margin-top:1.5rem;">
+<p style="font-size:0.82rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:#00b7ff;margin-bottom:0.8rem;">Real Car</p>
+</div>
+
+::: {.challenge-grid}
+::: {.challenge-card}
+**Hardware Demo**
+
+::: {.video-container}
+{{< video https://www.youtube.com/shorts/VsSHucboQDw >}}
+:::
+
+Initial hardware test showing the physical F1TENTH car operating under joystick-enabled autonomous control with the reactive controller active.
+:::
+
+::: {.challenge-card}
+**Reactive Gap Following on Hardware**
+
+::: {.video-container}
+{{< video https://www.youtube.com/shorts/MGImE-tu814 >}}
+:::
+
+Full reactive gap-following run on the physical car, demonstrating the sim-to-real transfer with conservative speed limits and scan-driven control.
+:::
 :::
 
 :::
