@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
+<meta name="generator" content="quarto-1.9.31">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Group Invincible | F1TENTH Time Trial</title>
+<title>Group Invincible | F1TENTH Time Trial – invincible_proj</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -21,8 +24,9 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 /* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -64,15 +68,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7c69b197886ae2a34062761d21e44731.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-c7ab57aa33037bad7520c6cb9ec7d6ec.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/fontawesome6-6.7.2/all.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/fontawesome6-6.7.2/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -104,40 +109,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -149,7 +125,7 @@ window.Quarto = {
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -159,8 +135,16 @@ window.Quarto = {
 <span class="menu-text">Overview</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="./#algorithms"> 
+<span class="menu-text">Algorithms</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="./#system"> 
 <span class="menu-text">System</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./#sim-to-real"> 
+<span class="menu-text">Sim to Real</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./#demo"> 
@@ -176,7 +160,7 @@ window.Quarto = {
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -187,19 +171,19 @@ window.Quarto = {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content column-page" id="quarto-document-content">
+<main class="content column-page" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
 
 <div class="hero-section hero-racing">
 <div class="hero-badge">
-<p>ECE 484 Final Project · F1TENTH Time Trial</p>
+<p>ECE 484 Midpoint · F1TENTH Time Trial</p>
 </div>
 <section id="group-invincible-f1tenth-time-trial" class="level1 title">
 <h1 class="title">Group Invincible: F1TENTH Time Trial</h1>
 <div class="subtitle">
-<p>Designing a fast, reliable, and competition-ready autonomous race car on a stock F1TENTH platform using onboard sensing, perception, planning, and control.</p>
+<p>Designing a fast, reliable, and competition-ready autonomous race car on a stock F1TENTH platform — with a reactive gap controller and a map-based A* + Stanley pipeline, validated in simulation and deployed on hardware.</p>
 </div>
 <div class="author-list">
 <p><strong>Zhenyu Zhang</strong>, <strong>Yuanzhe Wang</strong>, <strong>Murphy Huang</strong></p>
@@ -208,7 +192,7 @@ window.Quarto = {
 <p><sup>1</sup>University of Illinois Urbana-Champaign · ECE 484 · Spring 2026</p>
 </div>
 <div class="button-row">
-<p><a href="https://youtu.be/AghdeVoMORM" class="btn btn-primary"><span class="btn-text"><i class="fa-solid fa-video" aria-label="video"></i> Demo Video</span></a> <a href="https://github.com/safeautonomy-illinois-students/project-site-invincible_proj/" class="btn btn-primary"><span class="btn-text"><i class="fa-brands fa-github" aria-label="github"></i> GitHub</span></a> <a href="#system" class="btn btn-primary"><span class="btn-text"><i class="fa-solid fa-flag-checkered" aria-label="flag-checkered"></i> System</span></a> <a href="#results" class="btn btn-primary"><span class="btn-text"><i class="fa-solid fa-chart-line" aria-label="chart-line"></i> Results</span></a></p>
+<p><a href="https://youtu.be/AghdeVoMORM" class="btn btn-primary"><span class="btn-text"><i class="fa-solid fa-video" aria-label="video"></i> Demo Video</span></a> <a href="https://github.com/safeautonomy-illinois-students/project-site-invincible_proj/" class="btn btn-primary"><span class="btn-text"><i class="fa-brands fa-github" aria-label="github"></i> GitHub</span></a> <a href="#algorithms" class="btn btn-primary"><span class="btn-text"><i class="fa-solid fa-flag-checkered" aria-label="flag-checkered"></i> Algorithms</span></a> <a href="#results" class="btn btn-primary"><span class="btn-text"><i class="fa-solid fa-chart-line" aria-label="chart-line"></i> Results</span></a></p>
 </div>
 <div class="hero-highlight-grid">
 <div class="hero-highlight-card">
@@ -224,24 +208,24 @@ Optimize for speed, stability, and lap consistency in a one-car time trial setti
 </div>
 <div class="hero-highlight-card">
 <div class="highlight-label">
-Sensor Stack
+Two Approaches
 </div>
 <div class="highlight-value">
-LiDAR · Camera · IMU
+Reactive · Map-Based
 </div>
 <div class="highlight-note">
-Use any combination of stock onboard sensors without changing hardware.
+Reactive gap-following for simplicity and hardware deployment; A* + Stanley for globally optimal path planning.
 </div>
 </div>
 <div class="hero-highlight-card">
 <div class="highlight-label">
-Core Challenge
+Deployment
 </div>
 <div class="highlight-value">
-Perception to control under tight latency
+Simulation + Real Car
 </div>
 <div class="highlight-note">
-Every module must work robustly enough for real-time autonomous driving on a race track.
+Both approaches validated in the F1TENTH simulator; reactive controller deployed and tested on the physical vehicle.
 </div>
 </div>
 </div>
@@ -250,53 +234,153 @@ Every module must work robustly enough for real-time autonomous driving on a rac
 <div class="section-container section-soft">
 <div class="hero-summary-panel">
 <div class="summary-kicker">
-Project Snapshot
+Midpoint Snapshot
 </div>
 <div class="summary-text">
-
+<p>We designed and compared two complete autonomous driving strategies for the F1TENTH time trial. The first is a map-free reactive controller — it processes each LiDAR scan in real time to identify the safest open gap and steer toward it, requiring no prior mapping or localization. The second is a map-based pipeline combining A* path planning with cubic B-spline smoothing, physics-aware velocity profiling, and a Stanley lateral controller. Both were validated in the F1TENTH Gym simulator. The reactive approach was then successfully deployed on the physical car with hardware-specific safety adaptations.</p>
 </div>
 <div class="chip-row">
-<p><span class="info-chip">Real vehicle</span> <span class="info-chip">Software-only improvements</span> <span class="info-chip">Race against the clock</span> <span class="info-chip">Safety + performance</span></p>
+<p><span class="info-chip">Real vehicle</span> <span class="info-chip">Reactive + Map-based</span> <span class="info-chip">Simulation validated</span> <span class="info-chip">Safety + performance</span></p>
 </div>
 </div>
 </div>
 <section id="overview" class="level2 section-title section-container">
 <h2 class="section-title anchored" data-anchor-id="overview">Overview</h2>
 <div class="abstract-text">
-<p>We approach the problem as a full autonomy stack. The vehicle uses onboard sensing to understand the nearby environment, converts that information into a track-relative driving objective, and then executes that objective through steering and speed control. The final system design will implement a hybrid strategy with LiDAR and IMU feedback. The final website is structured to show not only the racing result, but also the engineering decisions behind the result: sensing, planning, control logic, evaluation strategy, and lessons learned from real-car testing.</p>
+<p>The F1TENTH time trial requires a fully autonomous stack capable of navigating a closed track as fast as possible without human intervention. We pursued two distinct design strategies. The first — a pure reactive controller — requires no prior map: it identifies the largest free-space gap in each LiDAR scan and steers toward it, relying entirely on real-time sensor data at 25 Hz. The second — a map-based pipeline — builds an occupancy grid, plans a globally optimal collision-free path with A*, smooths it into a continuous trajectory using cubic B-spline interpolation, generates a curvature-aware speed profile from track geometry, and tracks the path using a Stanley controller. Both approaches were fully implemented in ROS 2 and validated in the F1TENTH Gym simulator. For hardware deployment, we selected the reactive approach for its simplicity and zero-infrastructure requirement, adapting it with conservative safety margins, joystick-based enable control, and hardware-specific ROS topic names.</p>
 </div>
 </section>
 <div class="section-band">
-<div id="challenge" class="section-container">
-<section id="designed-algorism-plan" class="level2 section-title">
-<h2 class="section-title anchored" data-anchor-id="designed-algorism-plan">Designed algorism plan</h2>
+<div id="algorithms" class="section-container">
+<section id="algorithm-design" class="level2 section-title">
+<h2 class="section-title anchored" data-anchor-id="algorithm-design">Algorithm Design</h2>
+<div class="content-text">
+<p>We implemented two complete, independent autonomy stacks. Both share the same sensing front-end — a 2D LiDAR scan — but differ fundamentally in how they make driving decisions.</p>
+</div>
 <div class="challenge-grid">
-<section id="obstacle-situation-together-as-additional-interesting-point" class="level3 challenge-card">
-<h3 class="anchored" data-anchor-id="obstacle-situation-together-as-additional-interesting-point">obstacle situation (together as additional interesting point)</h3>
-<p>Reinforcement Learning (RL) for Proximal Policy Optimization (PPO) or Soft Actor-Critic (SAC). We use the 1080-array of LiDAR beams and current velocity to see steering angle and speed. Reward Function for +1 for maintaining high speed, -500 for triggering the TTC collision threshold. Artificial Potential Fields (APF) treats the car like a magnet. Your target destination pulls the car forward as attractive force, but any obstacles detected by the LiDAR push the car away as repulsive force.</p>
+<section id="approach-1-reactive-gap-following" class="level3 challenge-card">
+<h3 class="anchored" data-anchor-id="approach-1-reactive-gap-following">Approach 1 · Reactive Gap Following</h3>
+<p>A map-free controller that runs entirely on real-time LiDAR data. Each scan is processed to find the largest open gap ahead; steering and speed are commanded directly with no planning, localization, or prior map. The algorithm combines disparity extension (obstacle inflation based on car width), a dynamic safety bubble around the closest point, weighted gap scoring, corridor balance, and opening bias into a single compact control loop running at 25 Hz.</p>
+<p><strong>Sensor:</strong> LiDAR only &nbsp;·&nbsp; <strong>Map required:</strong> No &nbsp;·&nbsp; <strong>Deployed on:</strong> Simulation + Physical Car</p>
 </section>
-<section id="controller-zhenyu" class="level3 challenge-card">
-<h3 class="anchored" data-anchor-id="controller-zhenyu">Controller (Zhenyu)</h3>
-<p>For lateral control, we implement the Pure Pursuit algorithm. Simultaneously, longitudinal control is handled by a PID controller, which regulates the car’s throttle. Or Stanley Controller calculates both the cross-track error (how far off the line you are) and the heading error (the angle difference between the car and the track). This prevents the “snaking” or oscillating behavior that Pure Pursuit sometimes suffers from on straightaways.</p>
-</section>
-<section id="real-time-localization-yuanzhe" class="level3 challenge-card">
-<h3 class="anchored" data-anchor-id="real-time-localization-yuanzhe">Real-Time Localization (Yuanzhe)</h3>
-<p>Our system utilizes Google Cartographer to solve the Simultaneous Localization and Mapping (SLAM) problem. By performing scan-matching between real-time 2D LiDAR data and IMU inputs, it constructs a high-resolution occupancy grid map of the track. Simultaneously, it provides the vehicle’s precise <span class="math inline">\((x, y, \theta)\)</span> pose estimate by comparing current sensor inputs against the established global map.</p>
-</section>
-<section id="optimal-path-murphy" class="level3 challenge-card">
-<h3 class="anchored" data-anchor-id="optimal-path-murphy">optimal path (Murphy)</h3>
-<p>For navigation, we implement the A* Algorithm to compute the optimal path through the environment. Operating on the occupancy grid generated by the perception layer, A* employs a heuristic-based search to find the shortest collision-free route from the car’s current position to the target waypoint. This ensures a globally consistent path that accounts for track boundaries and static obstacles.</p>
+<section id="approach-2-a-stanley-controller" class="level3 challenge-card">
+<h3 class="anchored" data-anchor-id="approach-2-a-stanley-controller">Approach 2 · A* + Stanley Controller</h3>
+<p>A two-node map-based pipeline. An A* planner searches the ROS OccupancyGrid for a collision-free path to a goal pose set in RViz, smooths it with cubic B-spline interpolation, and attaches a physics-aware velocity profile based on local track curvature. A Stanley controller then tracks this path by correcting both heading error and lateral cross-track error simultaneously, with lookahead-based predictive speed control.</p>
+<p><strong>Sensor:</strong> LiDAR + Map &nbsp;·&nbsp; <strong>Map required:</strong> Yes &nbsp;·&nbsp; <strong>Deployed on:</strong> Simulation only</p>
 </section>
 </div>
+<hr>
+<section id="approach-1-reactive-gap-following-step-by-step" class="level3">
+<h3 class="anchored" data-anchor-id="approach-1-reactive-gap-following-step-by-step">Approach 1 — Reactive Gap Following: Step by Step</h3>
+<div class="pipeline-grid">
+<div class="pipeline-step">
+<div class="step-number">
+01
+</div>
+<h3 class="anchored">
+LiDAR Preprocessing
+</h3>
+<p>
+Clip all readings to 10 m and replace NaN/Inf values with max range. Apply a 5-beam moving-average kernel to reduce noise spikes. Restrict to a ±100° front field of view, discarding rays that point behind the car.
+</p>
+</div>
+<div class="pipeline-step">
+<div class="step-number">
+02
+</div>
+<h3 class="anchored">
+Obstacle Safety Margins
+</h3>
+<p>
+<strong>Disparity Extension:</strong> At every depth jump &gt; 0.35 m between adjacent beams, inflate the nearer side by n = ⌈arctan((w + m) / r) / Δθ⌉ beams (w = 0.16 m car half-width, m = 0.18 m safety margin). This prevents the car from targeting gaps it physically cannot fit through.
+</p>
+<p>
+<strong>Safety Bubble:</strong> Zero out all beams within a radius of the single closest point. Radius grows with current speed and steering angle, providing greater buffer at higher velocities.
+</p>
+</div>
+<div class="pipeline-step">
+<div class="step-number">
+03
+</div>
+<h3 class="anchored">
+Gap Selection
+</h3>
+<p>
+Find all contiguous beam segments with depth &gt; 1.25 m. Score each segment by: 0.04 × width + 1.0 × mean depth + 0.6 × max depth − 0.8 × |center angle|. Within the best segment, pick a target point biased toward far, forward-facing beams using per-beam scoring. Blend 72% toward best point and 28% toward gap center for the final target angle.
+</p>
+</div>
+<div class="pipeline-step">
+<div class="step-number">
+04
+</div>
+<h3 class="anchored">
+Steering &amp; Speed
+</h3>
+<p>
+<strong>Steering:</strong> δ = k<sub>g</sub>·θ<sub>target</sub> + k<sub>b</sub>·balance + b<sub>open</sub>, where <em>balance</em> nudges toward the more open side of the corridor and <em>opening bias</em> anticipates upcoming turns. Output is rate-limited to 0.12 rad/cycle and low-pass filtered (α = 0.55) for smooth commands.
+</p>
+<p>
+<strong>Speed:</strong> v = v<sub>min</sub> + (v<sub>max</sub> − v<sub>min</sub>)(0.45·f<sub>straight</sub> + 0.55·f<sub>open</sub>) − 1.8|δ| − 0.7|θ<sub>target</sub>|. Hard stop if front clearance &lt; 0.6 m or TTC &lt; 0.42 s.
+</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="approach-2-a-stanley-controller-step-by-step" class="level3">
+<h3 class="anchored" data-anchor-id="approach-2-a-stanley-controller-step-by-step">Approach 2 — A* + Stanley Controller: Step by Step</h3>
+<div class="pipeline-grid">
+<div class="pipeline-step">
+<div class="step-number">
+01
+</div>
+<h3 class="anchored">
+A* Path Search
+</h3>
+<p>
+Operates on the ROS OccupancyGrid published by SLAM. Uses 8-directional movement with an 8-cell safety padding around all occupied cells. Cost function: g-score is Euclidean distance traveled; heuristic is Euclidean distance to goal. Planning is triggered by a goal pose clicked in RViz.
+</p>
+</div>
+<div class="pipeline-step">
+<div class="step-number">
+02
+</div>
+<h3 class="anchored">
+Path Smoothing
+</h3>
+<p>
+The raw A* waypoint sequence has grid-aligned staircase artifacts. A cubic B-spline (scipy <code>splprep</code>, k = 3, s = 0.5) is fitted to the waypoints and re-sampled at 3× the original density. This produces a smooth, continuous reference curve suitable for a path-tracking controller.
+</p>
+</div>
+<div class="pipeline-step">
+<div class="step-number">
+03
+</div>
+<h3 class="anchored">
+Velocity Profiling
+</h3>
+<p>
+Menger curvature κ = 4A / (a·b·c) is computed from each consecutive triple of waypoints, where A is the triangle area and a, b, c are side lengths. Physics-based speed limit: v = √(μ·g·R), with μ = 0.8 (tire friction) and g = 9.81 m/s². Speed is clamped to 1.5–6.0 m/s. Each waypoint’s target speed is embedded in the Z coordinate of the ROS path message.
+</p>
+</div>
+<div class="pipeline-step">
+<div class="step-number">
+04
+</div>
+<h3 class="anchored">
+Stanley Tracking
+</h3>
+<p>
+Steering: δ = θ<sub>e</sub> + arctan(k·e<sub>ct</sub> / (v + k<sub>s</sub>)), where θ<sub>e</sub> is heading error and e<sub>ct</sub> is signed cross-track error measured at the front axle. k = 2.5 scales dynamically with speed: k<sub>dyn</sub> = k × (1 + 0.2v). Speed control previews 15 waypoints ahead — curvature &gt; 0.35: 1.5 m/s; &gt; 0.15: 2.0 m/s; else: 3.2 m/s.
+</p>
+</div>
+</div>
+</section>
 </section>
 </div>
 </div>
 <div id="system" class="section-container">
 <section id="system-pipeline" class="level2 section-title">
 <h2 class="section-title anchored" data-anchor-id="system-pipeline">System Pipeline</h2>
-<div class="content-text">
-
-</div>
 <div class="pipeline-grid">
 <div class="pipeline-step">
 <div class="step-number">
@@ -306,6 +390,7 @@ Project Snapshot
 Sensing
 </h3>
 <p>
+2D LiDAR provides a 270° range scan at 25 Hz as the primary perception input. IMU supplies orientation and angular rate for motion state estimation.
 </p>
 </div>
 <div class="pipeline-step">
@@ -313,9 +398,10 @@ Sensing
 02
 </div>
 <h3 class="anchored">
-Track Understanding
+Preprocessing
 </h3>
 <p>
+Clip invalid readings to max range, smooth with a 5-beam moving-average kernel, and crop to the front FOV. Apply disparity extension to inflate obstacle edges and a dynamic safety bubble around the closest detected point.
 </p>
 </div>
 <div class="pipeline-step">
@@ -326,6 +412,7 @@ Track Understanding
 Planning
 </h3>
 <p>
+<strong>Reactive:</strong> Gap scoring across preprocessed beams → target angle.<br> <strong>Map-based:</strong> A* on OccupancyGrid → B-spline smoothing → Menger curvature velocity profile.
 </p>
 </div>
 <div class="pipeline-step">
@@ -336,6 +423,7 @@ Planning
 Control
 </h3>
 <p>
+<strong>Reactive:</strong> Steering blend (gap + balance + bias) + speed scheduling → Ackermann drive command.<br> <strong>Map-based:</strong> Stanley heading + cross-track correction + lookahead speed → Ackermann drive command.
 </p>
 </div>
 </div>
@@ -343,7 +431,7 @@ Control
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="block_diagram.png" class="img-fluid figure-img" style="width:72.0%"></p>
-<figcaption>System flowchart for the F1TENTH autonomous driving pipeline.</figcaption>
+<figcaption>System architecture block diagram.</figcaption>
 </figure>
 </div>
 </div>
@@ -353,8 +441,165 @@ Control
 <figcaption>ROS node architecture of the F1TENTH autonomous driving pipeline.</figcaption>
 </figure>
 </div>
+</section>
+</div>
+<div class="section-band">
+<div id="sim-to-real" class="section-container">
+<section id="simulation-real-car" class="level2 section-title">
+<h2 class="section-title anchored" data-anchor-id="simulation-real-car">Simulation → Real Car</h2>
 <div class="content-text">
+<p>For hardware deployment we chose the reactive gap controller — it requires no map, no localization infrastructure, and no goal pose. The same core algorithm runs on the physical car with five targeted adaptations:</p>
+<p><strong>1. ROS Interface</strong> — Topic names changed from simulator paths (<code>/ego_racecar/scan</code>, <code>/ego_racecar/drive</code>) to hardware paths (<code>/scan</code>, <code>/ackermann_cmd</code>).</p>
+<p><strong>2. Joystick Safety Enable</strong> — The controller activates only while the operator holds the Y button on the joystick. On release, steering resets to zero to prevent a jerky restart.</p>
+<p><strong>3. Odometry-Free TTC</strong> — The physical car had unreliable odometry, so time-to-collision is estimated using a fixed conservative floor speed (0.10 m/s) instead of <code>/odom</code> feedback. This decouples the safety check from odometry quality entirely.</p>
+<p><strong>4. Conservative Speed Limits</strong> — Maximum speed reduced from 3.8 m/s (simulation) to 1.5 m/s. Emergency brake distance and TTC threshold were both tightened for hardware safety.</p>
+<p><strong>5. Scan-Driven Loop</strong> — Replaced the 25 Hz timer-based control loop with a per-scan callback so every incoming LiDAR message directly triggers a control output, eliminating one source of latency.</p>
+</div>
+<div class="comparison-table-wrap">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Parameter</th>
+<th>Simulation</th>
+<th>Real Car</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>LiDAR topic</td>
+<td><code>/ego_racecar/scan</code></td>
+<td><code>/scan</code></td>
+</tr>
+<tr class="even">
+<td>Drive topic</td>
+<td><code>/ego_racecar/drive</code></td>
+<td><code>/ackermann_cmd</code></td>
+</tr>
+<tr class="odd">
+<td>Odometry</td>
+<td><code>/ego_racecar/odom</code> (for TTC)</td>
+<td>Not used — fixed floor speed</td>
+</tr>
+<tr class="even">
+<td>Enable control</td>
+<td>Always active</td>
+<td>Y button held on joystick</td>
+</tr>
+<tr class="odd">
+<td>Control trigger</td>
+<td>25 Hz timer</td>
+<td>Per-scan callback</td>
+</tr>
+<tr class="even">
+<td>Max speed</td>
+<td>3.8 m/s</td>
+<td>1.5 m/s</td>
+</tr>
+<tr class="odd">
+<td>Min speed</td>
+<td>1.1 m/s</td>
+<td>0.8 m/s</td>
+</tr>
+<tr class="even">
+<td>Emergency brake distance</td>
+<td>0.60 m</td>
+<td>0.70 m</td>
+</tr>
+<tr class="odd">
+<td>TTC threshold</td>
+<td>0.42 s</td>
+<td>0.50 s</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</div>
+</div>
+<div class="section-band section-band-dark">
+<div id="demo" class="section-container">
+<section id="demo-video" class="level2 section-title section-title-light">
+<h2 class="section-title section-title-light anchored" data-anchor-id="demo-video">Demo Video</h2>
+<div class="video-container video-frame">
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/AghdeVoMORM" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</div>
+<div class="content-text content-text-light">
+<p>Reactive gap controller navigating the F1TENTH simulator track — base simulation setup.</p>
+</div>
+</section>
+</div>
+</div>
+<div id="results" class="section-container">
+<section id="results-evaluation" class="level2 section-title">
+<h2 class="section-title anchored" data-anchor-id="results-evaluation">Results &amp; Evaluation</h2>
+<div class="metrics-grid">
+<div class="metric-card">
+<div class="metric-label">
+Best Lap Time
+</div>
+<div class="metric-value">
+TBD
+</div>
+<div class="metric-note">
 
+</div>
+</div>
+<div class="metric-card">
+<div class="metric-label">
+Completion Rate
+</div>
+<div class="metric-value">
+TBD
+</div>
+<div class="metric-note">
+
+</div>
+</div>
+<div class="metric-card">
+<div class="metric-label">
+Controller Smoothness
+</div>
+<div class="metric-value">
+TBD
+</div>
+<div class="metric-note">
+
+</div>
+</div>
+<div class="metric-card">
+<div class="metric-label">
+Top Reliable Speed
+</div>
+<div class="metric-value">
+TBD
+</div>
+<div class="metric-note">
+
+</div>
+</div>
+</div>
+<div class="content-text">
+<p>Final performance numbers will be recorded from the competition run. Evaluation criteria include lap time, track completion rate, steering smoothness (measured as RMS steering angle change per cycle), and the highest speed at which the car completed the full track without faults.</p>
+</div>
+</section>
+</div>
+<div id="future" class="section-container">
+<section id="future-improvements" class="level2 section-title">
+<h2 class="section-title anchored" data-anchor-id="future-improvements">Future Improvements</h2>
+<div class="content-text">
+<p>With both simulation pipelines validated and the reactive controller running on hardware, the team’s next steps focus on closing the performance gap between simulation and competition:</p>
+<ul>
+<li><strong>Deploy A* + Stanley on hardware</strong> — the map-based pipeline is currently simulation-only; deploying it requires integrating Google Cartographer SLAM for real-time occupancy grid mapping and vehicle localization on the physical car.</li>
+<li><strong>Increase real-car speed</strong> — the current 1.5 m/s hardware cap is well below the 3.8 m/s achieved in simulation; incremental speed increases paired with re-tuned safety thresholds are planned.</li>
+<li><strong>Dynamic bubble scaling</strong> — at higher speeds, the fixed bubble radius is insufficient; a look-ahead distance scaling with v² is under consideration for better high-speed safety.</li>
+<li><strong>Curvature-aware speed on reactive controller</strong> — apply the same Menger curvature velocity profiling from the A* pipeline to the reactive controller so cornering speed is physically consistent even without a global path.</li>
+<li><strong>Lap time optimization</strong> — fine-tune steering blend coefficients and gap scoring weights specifically for the competition track geometry once the track layout is finalized.</li>
+</ul>
 </div>
 </section>
 </div>
@@ -362,64 +607,59 @@ Control
 <section id="sensors-and-inputs" class="level2 section-title">
 <h2 class="section-title anchored" data-anchor-id="sensors-and-inputs">Sensors and Inputs</h2>
 <div class="content-text">
-<table class="table">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
 <thead>
 <tr class="header">
 <th>Source</th>
-<th>Topic / Data</th>
+<th>Topic</th>
 <th>Use</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>LiDAR</td>
-<td><code>/scan</code></td>
-<td>Boundary and obstacle sensing</td>
+<td><code>/scan</code> · <code>/ego_racecar/scan</code></td>
+<td>Primary obstacle and gap sensing</td>
 </tr>
 <tr class="even">
 <td>IMU</td>
 <td><code>/imu</code></td>
-<td>Motion and orientation feedback</td>
+<td>Orientation and angular rate</td>
 </tr>
 <tr class="odd">
 <td>Odometry</td>
-<td><code>/odom</code></td>
-<td>Velocity and motion estimate</td>
+<td><code>/ego_racecar/odom</code></td>
+<td>Speed feedback for TTC (simulation only)</td>
 </tr>
 <tr class="even">
+<td>OccupancyGrid</td>
+<td><code>/map</code></td>
+<td>Grid map for A* path planning</td>
+</tr>
+<tr class="odd">
 <td>Goal pose</td>
 <td><code>/goal_pose</code></td>
-<td>Planner target</td>
-</tr>
-<tr class="odd">
-<td>Map</td>
-<td><code>/map</code></td>
-<td>Free-space representation</td>
+<td>A* planning target (set in RViz)</td>
 </tr>
 <tr class="even">
-<td>Vehicle pose</td>
-<td><code>/vehicle_pose</code></td>
-<td>Current state estimate</td>
+<td>Joystick</td>
+<td><code>/joy</code></td>
+<td>Safety enable/disable on hardware</td>
 </tr>
 <tr class="odd">
-<td>Global path</td>
-<td><code>/global_path</code></td>
-<td>A* planning output</td>
-</tr>
-<tr class="even">
-<td>Smoothed path</td>
-<td><code>/smoothed_path</code></td>
-<td>Lateral control reference</td>
-</tr>
-<tr class="odd">
-<td>Target speed</td>
-<td><code>/target_speed</code></td>
-<td>Longitudinal control reference</td>
+<td>Planned path</td>
+<td><code>/planned_trajectory</code></td>
+<td>A* planner output → Stanley controller input</td>
 </tr>
 <tr class="even">
 <td>Drive command</td>
-<td><code>/drive</code></td>
-<td>Vehicle actuation command</td>
+<td><code>/ackermann_cmd</code> · <code>/ego_racecar/drive</code></td>
+<td>Vehicle actuation</td>
 </tr>
 </tbody>
 </table>
@@ -429,7 +669,7 @@ Control
 <section id="plan" class="level2 section-title section-container">
 <h2 class="section-title anchored" data-anchor-id="plan">Plan</h2>
 <div class="content-text">
-<table class="table">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
 <col style="width: 33%">
@@ -517,105 +757,23 @@ Control
 </table>
 </div>
 </section>
-<div class="section-band section-band-dark">
-<div id="demo" class="section-container">
-<section id="demo-video" class="level2 section-title section-title-light">
-<h2 class="section-title section-title-light anchored" data-anchor-id="demo-video">Demo Video</h2>
-<div class="video-container video-frame">
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/AghdeVoMORM" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-</div>
-<div class="content-text content-text-light">
-<p>Base setup for the simulator</p>
-</div>
-</section>
-</div>
-</div>
-<div id="results" class="section-container">
-<section id="results-evaluation" class="level2 section-title">
-<h2 class="section-title anchored" data-anchor-id="results-evaluation">Results &amp; Evaluation</h2>
-<div class="metrics-grid">
-<div class="metric-card">
-<div class="metric-label">
-Best Lap Time
-</div>
-<div class="metric-value">
-TBD
-</div>
-<div class="metric-note">
-
-</div>
-</div>
-<div class="metric-card">
-<div class="metric-label">
-Completion Rate
-</div>
-<div class="metric-value">
-TBD
-</div>
-<div class="metric-note">
-
-</div>
-</div>
-<div class="metric-card">
-<div class="metric-label">
-Controller Smoothness
-</div>
-<div class="metric-value">
-TBD
-</div>
-<div class="metric-note">
-
-</div>
-</div>
-<div class="metric-card">
-<div class="metric-label">
-Top Reliable Speed
-</div>
-<div class="metric-value">
-TBD
-</div>
-<div class="metric-note">
-
-</div>
-</div>
-</div>
-<div class="content-text">
-
-</div>
-</section>
-</div>
-<div id="future" class="section-container">
-<section id="future-improvements" class="level2 section-title">
-<h2 class="section-title anchored" data-anchor-id="future-improvements">Future Improvements</h2>
-<div class="content-text">
-<p>Later work on the algorithm.</p>
-</div>
-</section>
-</div>
 <section id="related-works" class="level2 section-title section-container">
 <h2 class="section-title anchored" data-anchor-id="related-works">Related Works</h2>
 <div class="resource-grid">
 <div class="resource-card">
-<p><strong>Google Cartographer</strong><br>
-website:<br>
-<a href="https://google-cartographer-ros.readthedocs.io/en/latest/">website</a></p>
+<p><strong>Google Cartographer</strong> Real-time SLAM for 2D occupancy grid mapping: <a href="https://google-cartographer-ros.readthedocs.io/en/latest/">Documentation</a></p>
 </div>
 <div class="resource-card">
-<p><strong>2D LiDAR SLAM</strong><br>
-paper:<br>
-<a href="https://static.googleusercontent.com/media/research.google.com/zh-CN//pubs/archive/45466.pdf">paper</a></p>
+<p><strong>2D LiDAR SLAM</strong> Hess et al.&nbsp;— Real-Time Loop Closure in 2D LIDAR SLAM: <a href="https://static.googleusercontent.com/media/research.google.com/zh-CN//pubs/archive/45466.pdf">Paper</a></p>
 </div>
 <div class="resource-card">
-<p><strong>A Algorithm</strong><br>
-<a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0263841">paper</a></p>
+<p><strong>A* Algorithm</strong> Optimal heuristic search for grid-based path planning: <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0263841">Paper</a></p>
 </div>
 <div class="resource-card">
-<p><strong>Artificial Potential Fields</strong><br>
-<a href="https://pure.tue.nl/ws/portalfiles/portal/360154334/1312049_ControlForUnderactuatedVehiclesWithStateConstraintsUsingArtificialPotentialFields.pdf">paper</a></p>
+<p><strong>Artificial Potential Fields</strong> Reactive navigation via attractive and repulsive force fields: <a href="https://pure.tue.nl/ws/portalfiles/portal/360154334/1312049_ControlForUnderactuatedVehiclesWithStateConstraintsUsingArtificialPotentialFields.pdf">Paper</a></p>
 </div>
 <div class="resource-card">
-<p><strong>Proximal Policy Optimization</strong><br>
-<a href="https://arxiv.org/abs/1707.06347">paper</a></p>
+<p><strong>Proximal Policy Optimization</strong> Schulman et al.&nbsp;— RL policy gradient method for autonomous control: <a href="https://arxiv.org/abs/1707.06347">Paper</a></p>
 </div>
 </div>
 </section>
@@ -623,28 +781,23 @@ paper:<br>
 <h2 class="section-title anchored" data-anchor-id="project-resources">Project Resources</h2>
 <div class="resource-grid">
 <div class="resource-card">
-<p><strong>Codebase</strong><br>
-Implementation and website repository:<br>
-<a href="https://github.com/safeautonomy-illinois-students/project-site-invincible_proj/">project-site-invincible_proj</a></p>
+<p><strong>Codebase</strong> Implementation and website repository: <a href="https://github.com/safeautonomy-illinois-students/project-site-invincible_proj/">project-site-invincible_proj</a></p>
 </div>
 <div class="resource-card">
-<p><strong>Demo Media</strong><br>
-Current embedded video:<br>
-<a href="https://youtu.be/AghdeVoMORM">YouTube Demo</a></p>
+<p><strong>Demo Media</strong> Current simulation demo: <a href="https://youtu.be/AghdeVoMORM">YouTube Demo</a></p>
 </div>
 <div class="resource-card">
-<p><strong>What to Add Next</strong><br>
-Race images, trajectory plots, lap-time tables, ROS graph snapshots, and annotated failure cases.</p>
+<p><strong>What to Add Next</strong> Race images, lap-time tables, steering smoothness plots, ROS graph snapshots, and real-car test footage.</p>
 </div>
 </div>
 </section>
 <section id="bibtex" class="level2 section-title section-container">
 <h2 class="section-title anchored" data-anchor-id="bibtex">BibTeX</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="va">@article</span>{<span class="ot">invincibleproj</span>,</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="va">@article</span>{<span class="ot">invincibleproj</span>,</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">title</span>        = {invincible_proj: Autonomous F1TENTH Time Trial Racing},</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">author</span>       = {Zhenyu Zhang and Yuanzhe Wang and Murphy Huang},</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">year</span>         = {2026},</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <div class="site-footer">
 <p>This website is built with Quarto for an F1TENTH autonomous racing project page.</p>
@@ -654,43 +807,58 @@ Race images, trajectory plots, lap-time tables, ROS graph snapshots, and annotat
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
       }
+      return false;
     }
-    return false;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
       for (const childEl of codeEl.children) {
         if (isCodeAnnotation(childEl)) {
           childEl.remove();
@@ -698,162 +866,184 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
       return codeEl.innerText;
     }
-  });
-  clipboard.on('success', function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  });
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
-    };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      return note.innerHTML;
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
     });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
     }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
         }
-        return container.innerHTML
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -861,185 +1051,161 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 </div> <!-- /content -->
 
 

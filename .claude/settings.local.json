@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(file /d/project-site-invincible_proj/*.png /d/project-site-invincible_proj/*.svg)"
+    ]
+  }
+}

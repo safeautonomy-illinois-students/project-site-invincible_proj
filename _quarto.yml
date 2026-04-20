@@ -9,8 +9,12 @@ website:
     left:
       - text: "Overview"
         href: "#overview"
+      - text: "Algorithms"
+        href: "#algorithms"
       - text: "System"
         href: "#system"
+      - text: "Sim to Real"
+        href: "#sim-to-real"
       - text: "Demo"
         href: "#demo"
       - text: "Results"
