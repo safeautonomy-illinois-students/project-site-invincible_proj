@@ -230,7 +230,7 @@ Simulation and real-car recordings of the Reactive Gap Following controller.
 
 ::: {.challenge-grid}
 ::: {.challenge-card}
-**Short Run**
+**Reactive Gap Following — Short Run**
 
 ::: {.video-container}
 {{< video https://youtu.be/OyY7nvF_2yk >}}
@@ -240,13 +240,23 @@ Reactive gap controller navigating a short track segment in the F1TENTH simulato
 :::
 
 ::: {.challenge-card}
-**Long Run**
+**Reactive Gap Following — Long Run**
 
 ::: {.video-container}
 {{< video https://youtu.be/4Nvf8pd5VIA >}}
 :::
 
 Full-length simulation run demonstrating consistent gap-following throughout a complete track lap, including straight-line speed and corner braking.
+:::
+
+::: {.challenge-card}
+**A\* + Stanley Controller — Short Run**
+
+::: {.video-container}
+{{< video https://www.youtube.com/watch?v=drcnit15shc >}}
+:::
+
+Short simulation run of the map-based pipeline: A* plans a path from the current pose to a goal set in RViz, and the Stanley controller tracks it with combined heading and cross-track correction.
 :::
 :::
 
@@ -314,6 +324,46 @@ The plot below is extracted from a rosbag recording of the A* + Stanley pipeline
 **Left — Trajectory (color = speed):** The A* planner computed a smooth curved path from the start pose (red circle, origin) to the goal pose (blue triangle, ~3.5 m ahead). The Stanley controller tracked it with no visible deviation — the trajectory trace is a clean single line throughout. Speed is color-coded: the car starts from rest (dark purple), accelerates through the curve, and reaches a cruise speed of ~1.0–1.1 m/s (yellow-green) by the midpoint of the path.
 
 **Right — Speed Profile:** Speed is plotted against rosbag message index. The car ramps up sharply to ~1.0 m/s within the first ~50 messages, holds a steady cruise for approximately 200 messages while tracking the path, then drops to zero when the Stanley controller detects arrival at the final waypoint. The remaining ~1500 messages record the car at rest after goal completion. The clean ramp-and-hold profile confirms that the lookahead-based speed control produces smooth, predictable longitudinal behavior with no overshoot.
+:::
+
+### A\* + Stanley Controller — Full Simulation Lap
+
+::: {.content-text}
+The following five plots are recorded from a complete simulation lap of the A* + Stanley pipeline (~160 seconds, ~2.5 laps).
+:::
+
+::: {.challenge-grid}
+::: {.challenge-card}
+![](<trace A.png>)
+
+**Trajectory Trace (color = speed)** — The Stanley controller follows the A*-planned path around the full track. The car holds high speed (yellow/green, 5–6 m/s) on all straights, with clean speed reductions (blue, 2–3 m/s) at each corner. The single consistent trace line confirms the controller tracks the reference path with no visible deviation or oscillation throughout the lap.
+:::
+
+::: {.challenge-card}
+![](<steering A.png>)
+
+**Steering vs Time** — Commanded steering (blue) and safety-output steering (orange) overlap almost perfectly for the entire 160-second run, confirming the safety layer rarely needs to override the Stanley output. Steering stays well within ±0.1 rad after the large initial correction at startup (−0.4 rad when the controller first locks onto the path), demonstrating the smooth, low-amplitude tracking behavior of the Stanley equation.
+:::
+
+::: {.challenge-card}
+![](<Acceleration A.png>)
+
+**Acceleration vs Time** — Sharp spikes up to ±10 m/s² occur at predictable, regularly-spaced intervals corresponding to corner entry and exit events, with smooth near-zero periods in between on the straights. The periodic structure reflects the planned path: the car knows where corners are and brakes for them consistently each lap, in contrast to the reactive controller's high-frequency noise throughout.
+:::
+
+::: {.challenge-card}
+![](<TTC A.png>)
+
+**TTC vs Time** — Time-to-collision plotted against two thresholds: TTC slow (orange dashed, 0.8 s) and TTC brake (red dashed, 0.3 s). The car operates in the 0.3–0.8 s band throughout, approaching the brake threshold at the tightest corners near t = 95 s and t = 150 s but never triggering an emergency stop. The consistent operating range confirms the curvature-based velocity profile keeps the car at an appropriate speed for each section of track.
+:::
+:::
+
+::: {.flowchart-wrap}
+![](<shield speed A.png>){width="92%"}
+:::
+
+::: {.content-text}
+**Safety Shield Speed Reduction vs Time** — The safety shield fires regularly across all 160 seconds, reducing the commanded speed by up to ~6 m/s at each intervention. The consistent ~5–10 second spacing between spikes maps directly to the corner frequency of the track layout, showing the shield responds to genuine geometric hazards rather than spurious noise. Between corners the reduction is zero, meaning the shield is not fighting the planner on the straights.
 :::
 
 ---
