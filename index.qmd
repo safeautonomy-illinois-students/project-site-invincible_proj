@@ -176,45 +176,6 @@ A two-node map-based pipeline. An A* planner searches the ROS OccupancyGrid for 
 :::
 :::
 
-::: {#system .section-container}
-
-## System Pipeline {.section-title}
-
-::: {.pipeline-grid}
-::: {.pipeline-step}
-<div class="step-number">01</div>
-<h3>Sensing</h3>
-<p>2D LiDAR provides a 270° range scan at 25 Hz as the primary perception input. IMU supplies orientation and angular rate for motion state estimation.</p>
-:::
-
-::: {.pipeline-step}
-<div class="step-number">02</div>
-<h3>Preprocessing</h3>
-<p>Clip invalid readings to max range, smooth with a 5-beam moving-average kernel, and crop to the front FOV. Apply disparity extension to inflate obstacle edges and a dynamic safety bubble around the closest detected point.</p>
-:::
-
-::: {.pipeline-step}
-<div class="step-number">03</div>
-<h3>Planning</h3>
-<p><strong>Reactive:</strong> Gap scoring across preprocessed beams → target angle.<br>
-<strong>Map-based:</strong> A* on OccupancyGrid → B-spline smoothing → Menger curvature velocity profile.</p>
-:::
-
-::: {.pipeline-step}
-<div class="step-number">04</div>
-<h3>Control</h3>
-<p><strong>Reactive:</strong> Steering blend (gap + balance + bias) + speed scheduling → Ackermann drive command.<br>
-<strong>Map-based:</strong> Stanley heading + cross-track correction + lookahead speed → Ackermann drive command.</p>
-:::
-:::
-
-::: {.flowchart-wrap}
-![System architecture block diagram.](block_diagram.png){width="72%"}
-:::
-
-![ROS node architecture of the F1TENTH autonomous driving pipeline.](f1tenth_ros_architecture.svg){width="92%"}
-
-:::
 
 ::: {.section-band}
 ::: {#sim-to-real .section-container}
@@ -322,51 +283,6 @@ With both simulation pipelines validated and the reactive controller running on 
 
 :::
 
-::: {#sensors-inputs .section-container}
-
-## Sensors and Inputs {.section-title}
-
-::: {.content-text}
-
-| Source | Topic | Use |
-|---|---|---|
-| LiDAR | `/scan` · `/ego_racecar/scan` | Primary obstacle and gap sensing |
-| IMU | `/imu` | Orientation and angular rate |
-| Odometry | `/ego_racecar/odom` | Speed feedback for TTC (simulation only) |
-| OccupancyGrid | `/map` | Grid map for A* path planning |
-| Goal pose | `/goal_pose` | A* planning target (set in RViz) |
-| Joystick | `/joy` | Safety enable/disable on hardware |
-| Planned path | `/planned_trajectory` | A* planner output → Stanley controller input |
-| Drive command | `/ackermann_cmd` · `/ego_racecar/drive` | Vehicle actuation |
-
-:::
-:::
-
-::: {.section-container}
-
-## Plan {.section-title}
-
-::: {.content-text}
-
-| Step | Main Task | Goal / Output |
-|---|---|---|
-| Step 1 | Set up the F1TENTH platform and ROS workspace | Confirm the vehicle, onboard computer, ROS packages, and dependencies build and run correctly |
-| Step 2 | Bring up LiDAR, IMU, and odometry drivers | Publish stable `/scan`, `/imu`, and `/odom` topics with valid data |
-| Step 3 | Run and tune Google Cartographer | Generate a consistent occupancy grid map and real-time vehicle pose estimate |
-| Step 4 | Validate localization and map quality | Check map consistency, pose accuracy, and repeatability on the track |
-| Step 5 | Implement the A* global planner | Compute a collision-free global path from the current pose to the target waypoint |
-| Step 6 | Add path smoothing and trajectory generation | Convert the raw planner output into a smooth, drivable reference path |
-| Step 7 | Add curvature-based speed planning | Generate a speed profile that slows in turns and increases on straights |
-| Step 8 | Implement Stanley lateral control | Compute steering commands from cross-track and heading error |
-| Step 9 | Implement PID longitudinal speed control | Track the target speed using throttle or drive commands |
-| Step 10 | Integrate steering and speed into Ackermann drive commands | Publish closed-loop control commands compatible with the F1TENTH platform |
-| Step 11 | Test and tune in simulation | Debug interfaces, verify closed-loop behavior, and tune controller parameters safely |
-| Step 12 | Test on the real vehicle | Verify stable autonomous driving on the physical F1TENTH car |
-| Step 13 | Improve lap performance and robustness | Reduce lap time, improve smoothness, and increase stability across repeated runs |
-| Step 14 | Final evaluation and demo preparation | Record results, compare runs, and prepare the final presentation and website summary |
-:::
-
-:::
 
 ::: {.section-container}
 
